@@ -1,0 +1,26 @@
+{
+	"class" : {
+		"forObjectMemory:oop:" : "ct 5/15/2025 03:52",
+		"initialize" : "ct 5/14/2025 15:13",
+		"isUniClass" : "ct 5/14/2025 15:24",
+		"isVmObjectProxyClass" : "ct 5/14/2025 16:23",
+		"newInstanceFrom:variable:size:map:" : "ct 5/15/2025 00:14",
+		"pullStateInto:" : "ct 5/15/2025 04:06",
+		"pushStateFrom:" : "ct 5/14/2025 15:15" },
+	"instance" : {
+		"class" : "ct 5/14/2025 15:17",
+		"defaultLabelForInspector" : "ct 5/14/2025 16:31",
+		"doesNotUnderstand:" : "ct 5/15/2025 03:34",
+		"instVarNamed:" : "ct 5/14/2025 15:18",
+		"isProxy" : "ct 5/15/2025 03:30",
+		"mustBeBoolean" : "ct 5/15/2025 03:41",
+		"objectAt:" : "ct 5/15/2025 00:39",
+		"printOn:" : "ct 5/14/2025 15:45",
+		"resolveProxyForm" : "ct 5/15/2025 04:03",
+		"size" : "ct 5/15/2025 00:51",
+		"vmObjectClass" : "ct 5/16/2025 21:40",
+		"vmObjectClassObject" : "ct 5/14/2025 15:54",
+		"vmObjectDo:" : "ct 5/14/2025 15:40",
+		"vmObjectHeaderInfo" : "ct 5/15/2025 00:22",
+		"vmObjectMemoryInfo" : "ct 5/14/2025 23:18",
+		"vmObjectOop" : "ct 5/14/2025 15:32" } }

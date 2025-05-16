@@ -1,0 +1,4 @@
+private
+proxyClass
+
+	^ VMObjectProxy3

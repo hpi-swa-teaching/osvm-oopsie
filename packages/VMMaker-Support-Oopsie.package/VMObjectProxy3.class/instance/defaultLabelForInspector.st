@@ -1,0 +1,4 @@
+inspector
+defaultLabelForInspector
+
+	^ self printString

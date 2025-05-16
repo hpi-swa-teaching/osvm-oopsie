@@ -1,0 +1,15 @@
+{
+	"category" : "VMMaker-Support-Oopsie",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Mirror",
+		"VMPrimitives" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"sandbox" ],
+	"name" : "VMObjectProxySimulator",
+	"pools" : [
+		 ],
+	"super" : "Simulator",
+	"type" : "normal" }
