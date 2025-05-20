@@ -1,4 +1,4 @@
 *VMMaker-Support-Oopsie
 xxxOopIn: anObjectMemory
 
-	^ nil xxxOopIn: anObjectMemory
+	^ anObjectMemory externalObjectOf: self
