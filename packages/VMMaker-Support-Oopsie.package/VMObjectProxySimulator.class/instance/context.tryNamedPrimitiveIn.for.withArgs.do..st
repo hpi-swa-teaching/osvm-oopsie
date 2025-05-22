@@ -15,9 +15,6 @@ context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: a
 	oop := receiver xxxOop.
 	
 	^ self context: aContext withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter |
-		| oldArgumentCount |
-		oldArgumentCount := interpreter argumentCount.
 		interpreter argumentCount: 0.
-		[address := objectMemory ioLoadFunction: literal second From: literal first.
+		address := objectMemory ioLoadFunction: literal second From: literal first.
 		interpreter callExternalPrimitive: address]
-			ensure: [interpreter argumentCount: oldArgumentCount]]
