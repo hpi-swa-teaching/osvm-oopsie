@@ -1,4 +1,4 @@
-*VMMaker-Support-Oopsie-override
+*VMMaker-Support-Oopsie-*VMMakerUI-user interface-override
 utilitiesMenu: aMenuMorph
 	aMenuMorph
 		add: 'send input to stdin' action: #sendInputToStdin;
@@ -33,6 +33,7 @@ utilitiesMenu: aMenuMorph
 											ifFalse: [cogit processor pc])];
 		add: 'disassemble ext head frame method' action: [cogit disassembleMethod: (self mframeCogMethod: self headFramePointer)];
 		add: 'print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self printOop: oop]];
+		add: 'inspect oop...' action: [(self promptHex: 'inspect oop') ifNotNil: [:oop | self inspectOop: oop]];
 		add: 'long print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self longPrintOop: oop]];
 		add: 'print context...' action: [(self promptHex: 'print context') ifNotNil: [:oop| self printContext: oop]];
 		add: 'symbolic method...' action: [(self promptHex: 'method bytecodes') ifNotNil: [:oop| self symbolicMethod: oop]];
