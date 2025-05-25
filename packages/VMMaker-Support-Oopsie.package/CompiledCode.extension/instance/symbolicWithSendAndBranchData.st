@@ -3,4 +3,5 @@ symbolicWithSendAndBranchData
 
 	^ Text new: 1000 streamContents: [:stream |
 		self longPrintWithSendAndBranchDataOn: stream.
-		stream skip: -1]
+		self isQuick ifFalse:
+			[stream skip: -1]]
