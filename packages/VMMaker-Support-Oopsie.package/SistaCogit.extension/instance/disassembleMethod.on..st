@@ -8,7 +8,7 @@ disassembleMethod: surrogateOrAddress on: aStream
 		[aStream nextPutAll: 'counters:'; cr.
 		 0 to: (objectRepresentation numCountersFor: cogMethod counters) - 1 do:
 			[:i| | addr |
-			 addr := i * CounterBytes + counters.
+			 addr := i * CounterBytes + cogMethod counters.
 			 addr printOn: aStream base: 16.
 			 aStream nextPut: $:; space.
 			 (objectMemory long32At: addr) printOn: aStream base: 16.
