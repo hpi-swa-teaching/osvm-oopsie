@@ -12,6 +12,5 @@ longPrintWithSendAndBranchDataOn: aStream indent: tabs
 		self printPrimitiveOn: aStream.
 	].
 	(InstructionPrinterWithSendAndBranchData on: self)
-		sendAndBranchData: self sendAndBranchData;
 		indent: tabs;
 		printInstructionsOn: aStream.

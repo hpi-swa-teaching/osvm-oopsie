@@ -3,6 +3,9 @@
 		 },
 	"instance" : {
 		"longPrintWithSendAndBranchDataOn:" : "ct 5/16/2025 23:58",
-		"longPrintWithSendAndBranchDataOn:indent:" : "ct 5/15/2025 22:27",
+		"longPrintWithSendAndBranchDataOn:indent:" : "ct 5/26/2025 00:13",
 		"sendAndBranchData" : "ct 5/16/2025 23:30",
+		"symbolic" : "ct 5/25/2025 23:04",
+		"symbolicText" : "ct 5/16/2025 21:02",
+		"symbolicTextWithSignature" : "ct 5/25/2025 23:05",
 		"symbolicWithSendAndBranchData" : "ct 5/25/2025 23:05" } }
