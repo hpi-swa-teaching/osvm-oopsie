@@ -1,0 +1,15 @@
+{
+	"category" : "VMMaker-Support-Oopsie",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "mad 6/3/2025 15:18",
+	"instvars" : [
+		"innerTranscript",
+		"flushQueued" ],
+	"name" : "VMDeferredFlushTranscriptStream",
+	"pools" : [
+		"VMObjectIndices" ],
+	"super" : "WriteStream",
+	"type" : "normal" }

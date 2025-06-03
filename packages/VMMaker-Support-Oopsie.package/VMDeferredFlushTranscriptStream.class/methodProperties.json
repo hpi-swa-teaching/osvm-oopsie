@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"onTranscript:" : "mad 6/3/2025 15:04" },
+	"instance" : {
+		"clear" : "mad 6/3/2025 15:34",
+		"endEntry" : "mad 6/3/2025 14:47",
+		"flushToInner" : "mad 6/3/2025 15:05",
+		"innerTranscript" : "mad 6/3/2025 15:04",
+		"innerTranscript:" : "mad 6/3/2025 15:03",
+		"nextPut:" : "mad 6/3/2025 15:05",
+		"nextPutAll:" : "mad 6/3/2025 15:05",
+		"queueFlushToInner" : "mad 6/3/2025 15:11",
+		"show:" : "mad 6/3/2025 14:47",
+		"showln:" : "mad 6/3/2025 14:47" } }
