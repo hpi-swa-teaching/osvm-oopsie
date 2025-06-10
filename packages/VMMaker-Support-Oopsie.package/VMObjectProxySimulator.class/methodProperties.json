@@ -6,7 +6,7 @@
 		"context:method:withObjectMemory:receiver:arguments:simulatePrimitive:" : "ct 5/20/2025 16:11",
 		"context:pushReceiverVariable:do:" : "mad 6/5/2025 19:45",
 		"context:send:to:with:lookupIn:do:" : "ct 5/15/2025 19:55",
-		"context:simulatedObject:instVarAt:put:do:" : "mad 6/5/2025 20:14",
+		"context:simulatedObject:instVarAt:put:do:" : "mad 6/10/2025 15:07",
 		"context:tryNamedPrimitiveIn:for:withArgs:do:" : "ct 5/22/2025 22:39",
 		"context:withObjectMemory:receiver:arguments:simulatePrimitive:" : "ct 5/16/2025 23:54",
 		"proxyClass" : "ct 5/15/2025 16:54",
