@@ -1,16 +1,18 @@
 *VMMaker-Support-Oopsie
 ceCounterTripped: condition
-	| counterTrippedSelector context |
+	| counterTrippedSelector context shouldHandleInProxy |
+	shouldHandleInProxy := true.
 	self transcript cr; nextPutAll: 'counter tripped in '.
 	self shortPrintFrame: framePointer.
 	(condition = objectMemory falseObject
 	or: [condition = objectMemory trueObject]) ifFalse:
 		[^self ceSendMustBeBoolean: condition].
 	counterTrippedSelector := Smalltalk specialObjectsArray at: SelectorCounterTripped + 1.
-	counterTrippedSelector ifNil: [^ condition].
-	instructionPointer := self popStack.
-	context := self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer).
-	self push: instructionPointer.
+	(shouldHandleInProxy not or: [counterTrippedSelector isNil or: [counterTrippedSelector = objectMemory nilObject]]) ifTrue: [^ super ceCounterTripped: condition].
+	
+	context :=
+		[instructionPointer := self popStack.
+		self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer)]
+			ensure: [self push: instructionPointer].
 	^ objectMemory booleanObjectOf:
 		(Context >> counterTrippedSelector valueWithReceiver: context arguments: {objectMemory booleanValueOf: condition})
-	
