@@ -10,6 +10,7 @@ ceCounterTripped: condition
 	counterTrippedSelector ifNil: [^ condition].
 	instructionPointer := self popStack.
 	context := self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer).
+	self push: instructionPointer.
 	^ objectMemory booleanObjectOf:
 		(Context >> counterTrippedSelector valueWithReceiver: context arguments: {objectMemory booleanValueOf: condition})
 	
