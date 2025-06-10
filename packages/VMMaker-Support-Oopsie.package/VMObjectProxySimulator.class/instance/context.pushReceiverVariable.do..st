@@ -10,9 +10,9 @@ context: aContext pushReceiverVariable: offset do: aBlock
 	oop := aContext receiver xxxOop.
 	^ aContext push:
 		(self proxyClass forObjectMemory: objectMemory oop:
-			(((interpreter isReadMediatedContextInstVarIndex: offset)
-				and: [objectMemory isContextNonImm: oop])
+			(((objectMemory isContextNonImm: oop)
+				and: [interpreter isReadMediatedContextInstVarIndex: offset])
 					ifTrue: [interpreter
-								internalizeIPandSP;
-								instVar: offset ofContext: oop]
+								"internalizeIPandSP;"
+								externalInstVar: offset ofContext: oop]
 					ifFalse: [objectMemory fetchPointer: offset ofObject: oop]))

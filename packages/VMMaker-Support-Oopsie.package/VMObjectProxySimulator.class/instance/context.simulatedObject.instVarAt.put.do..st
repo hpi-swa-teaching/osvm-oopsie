@@ -8,8 +8,13 @@ context: aContext simulatedObject: anObject instVarAt: index put: value do: aBlo
 	objectMemory := anObject xxxObjectMemory.
 	interpreter := objectMemory interpreter.
 	oop := anObject xxxOop.
-	interpreter
-		internalizeIPandSP;
-		storeMaybeContext: oop receiverVariable: index - 1 withValue: (value xxxOopIn: objectMemory).
+	((objectMemory isContextNonImm: oop)
+		and: [interpreter isReadMediatedContextInstVarIndex: index - 1])
+			ifTrue:
+				[interpreter
+					"internalizeIPandSP;"
+					externalInstVar: index - 1 ofContext: oop put: (value xxxOopIn: objectMemory)]
+			ifFalse:
+				[objectMemory storePointer: index - 1 ofObject: oop withValue: (value xxxOopIn: objectMemory)].
 	self assert: (anObject xxxObjectMemory isKindOf: VMClass).
 	^ value
