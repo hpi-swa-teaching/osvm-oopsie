@@ -5,4 +5,5 @@
 		"branchIfInstanceOf:distance:" : "ct 6/10/2025 21:12",
 		"branchIfNotInstanceOf:distance:" : "ct 6/10/2025 21:16",
 		"callInlinePrimitive:" : "ct 6/10/2025 21:15",
+		"conditionalBranchCounterTrippedOn:" : "ct 6/10/2025 23:05",
 		"unusedBytecode" : "ct 6/10/2025 19:55" } }

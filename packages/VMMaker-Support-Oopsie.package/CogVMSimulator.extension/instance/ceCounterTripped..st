@@ -10,6 +10,7 @@ ceCounterTripped: condition
 	counterTrippedSelector := Smalltalk specialObjectsArray at: SelectorCounterTripped + 1.
 	(shouldHandleInProxy not or: [counterTrippedSelector isNil or: [counterTrippedSelector = objectMemory nilObject]]) ifTrue: [^ super ceCounterTripped: condition].
 	
+	self halt.
 	context :=
 		[instructionPointer := self popStack.
 		self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer)]
