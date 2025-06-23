@@ -3,7 +3,7 @@
 	"classinstvars" : [
 		 ],
 	"classvars" : [
-		"Pointers" ],
+		 ],
 	"commentStamp" : "",
 	"instvars" : [
 		"objectMemory",
