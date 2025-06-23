@@ -5,6 +5,7 @@
 		"context:doPrimitive:method:receiver:args:do:" : "ct 5/15/2025 22:19",
 		"context:method:withObjectMemory:receiver:arguments:simulatePrimitive:" : "ct 5/20/2025 16:11",
 		"context:pushReceiverVariable:do:" : "ct 6/10/2025 16:24",
+		"context:send:to:with:do:" : "ct 6/8/2025 19:27",
 		"context:send:to:with:lookupIn:do:" : "ct 5/15/2025 19:55",
 		"context:simulatedObject:instVarAt:put:do:" : "ct 6/10/2025 23:36",
 		"context:tryNamedPrimitiveIn:for:withArgs:do:" : "ct 5/22/2025 22:39",
