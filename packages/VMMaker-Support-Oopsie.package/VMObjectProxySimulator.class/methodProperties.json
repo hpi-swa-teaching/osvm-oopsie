@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"initialize" : "ct 5/15/2025 20:28" },
+		"initialize" : "mad 6/12/2025 14:19" },
 	"instance" : {
 		"context:doPrimitive:method:receiver:args:do:" : "ct 5/15/2025 22:19",
 		"context:method:withObjectMemory:receiver:arguments:simulatePrimitive:" : "ct 5/20/2025 16:11",

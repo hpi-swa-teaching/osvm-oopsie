@@ -1,10 +1,14 @@
 class initialization
 initialize
+	"
+	self initialize.
+	"
 
 	Mirror := thisContext.
 	VMPrimitives := (Array new: 578 withAll: true)
 		atAll:
-			(201 to: 222) "block closures"
+			(201 to: 209) "block closures"
+				, #(221 222) "more block closures"
 				, #(83 84 100) "perform"
 				, #(188 189) "executeMethod"
 				, #(117) "primitiveExternalCall"
