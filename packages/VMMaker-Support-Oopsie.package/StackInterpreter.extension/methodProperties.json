@@ -1,7 +1,8 @@
 {
 	"class" : {
-		 },
+		"initializeBytecodeTableForSistaV1" : "mad 6/12/2025 15:18" },
 	"instance" : {
+		"branchOnBehaviorLiteral" : "mad 6/19/2025 19:16",
 		"inspectOop0:" : "ct 5/15/2025 17:40",
 		"inspectOop:" : "ct 5/15/2025 21:30",
 		"proxyForOop:" : "ct 5/15/2025 21:30" } }
