@@ -16,4 +16,4 @@ ceCounterTripped: condition
 		self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer)]
 			ensure: [self push: instructionPointer].
 	^ objectMemory booleanObjectOf:
-		(Context >> counterTrippedSelector valueWithReceiver: context arguments: {objectMemory booleanValueOf: condition})
+		(context vmObjectPerform: counterTrippedSelector with: (objectMemory booleanValueOf: condition))

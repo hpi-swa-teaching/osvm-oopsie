@@ -2,4 +2,4 @@ accessing
 xxxOopIn: anObjectMemory
 
 	anObjectMemory == objectMemory ifTrue: [^ oop].
-	^ super xxxOopIn: anObjectMemory
+	^ self doesNotUnderstand: (Message selector: #xxxOopIn: argument: anObjectMemory)
