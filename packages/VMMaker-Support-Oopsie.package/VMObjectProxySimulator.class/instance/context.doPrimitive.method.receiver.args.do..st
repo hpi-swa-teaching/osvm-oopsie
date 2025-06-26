@@ -27,8 +27,10 @@ context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: 
 	(VMPrimitives at: primitiveIndex) ifFalse:
 		[^ super context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: receiver args: arguments do: aBlock].
 	
-	^ self context: aContext method: aCompiledMethod withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter |
-		interpreter
+	^ self context: aContext method: aCompiledMethod withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter | | sp fp |
+		sp := interpreter stackPointer. fp := interpreter framePointer.
+		[interpreter
 			primitiveFunctionPointer: (interpreter functionPointerFor: primitiveIndex inClass: objectMemory nilObject);
 			initPrimCall;
 			dispatchFunctionPointer: interpreter primitiveFunctionPointer]
+				ensure: [primitiveIndex = 76 ifTrue: [interpreter stackPointer: sp; framePointer: fp]]]
