@@ -8,11 +8,8 @@ context: aContext pushReceiverVariable: offset do: aBlock
 	objectMemory := aContext receiver xxxObjectMemory.
 	interpreter := objectMemory interpreter.
 	oop := aContext receiver xxxOop.
+	interpreter push: interpreter instructionPointer.
 	^ aContext push:
 		(self proxyClass forObjectMemory: objectMemory oop:
-			(((objectMemory isContextNonImm: oop)
-				and: [interpreter isReadMediatedContextInstVarIndex: offset])
-					ifTrue: [interpreter
-								"internalizeIPandSP;"
-								externalInstVar: offset ofContext: oop]
-					ifFalse: [objectMemory fetchPointer: offset ofObject: oop]))
+			([interpreter ceContext: oop instVar: offset]
+				ensure: [interpreter popStack]))
