@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"isReady" : "ct 6/29/2025 01:09",
+		"new" : "ct 6/29/2025 00:43",
+		"start" : "ct 6/29/2025 01:29",
+		"stop" : "ct 6/29/2025 01:17" },
+	"instance" : {
+		"attributesFor:" : "ct 6/28/2025 23:49",
+		"classOrMetaClass:" : "ct 6/28/2025 23:09",
+		"privateFormat:" : "ct 6/28/2025 22:53",
+		"privateStyle:" : "ct 6/28/2025 22:56",
+		"rangesBlock:" : "ct 6/28/2025 22:58",
+		"rangesIn:" : "ct 6/29/2025 01:01",
+		"setAttributesIn:fromRanges:" : "ct 6/28/2025 23:02",
+		"stTypeFor:" : "ct 6/28/2025 23:07",
+		"workspace:" : "ct 6/28/2025 23:09" } }
