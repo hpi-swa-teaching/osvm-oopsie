@@ -12,15 +12,18 @@ rangesIn: aText
 	
 	lines := aText lines.
 	lastHeaderIndex := (lines findFirst: [:ea | (ea beginsWith: String tab) not] startingAt: 2) - 1.
-	header := Text streamContents: [:stream |
-		(lines first: lastHeaderIndex)
-			do: [:ea | stream nextPutAll: ea]
-			separatedBy: [stream cr]].
+	header := lastHeaderIndex > 0
+		ifTrue:
+			[Text streamContents: [:stream |
+				(lines first: lastHeaderIndex)
+					do: [:ea | stream nextPutAll: ea]
+					separatedBy: [stream cr]]]
+		ifFalse: [''].
 	
 	deltas := OrderedCollection new. "offsets between undecorated body passed to rangesBlock and decorated equivalent"
 	delta := 0.
 	undecoratedBody := String streamContents: [:stream |
-		(lines allButFirst: lastHeaderIndex)
+		(lines allButFirst: (lastHeaderIndex clampLow: 0))
 			do: [:ea |
 				| bodyLine |
 				bodyLine := ea asString.

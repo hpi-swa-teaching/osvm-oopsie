@@ -1,7 +1,9 @@
 {
 	"class" : {
+		"exampleSource" : "ct 6/29/2025 02:26",
 		"isReady" : "ct 6/29/2025 01:09",
 		"new" : "ct 6/29/2025 00:43",
+		"openWorkspace" : "ct 6/29/2025 02:27",
 		"start" : "ct 6/29/2025 01:29",
 		"stop" : "ct 6/29/2025 01:17" },
 	"instance" : {
@@ -10,7 +12,7 @@
 		"privateFormat:" : "ct 6/28/2025 22:53",
 		"privateStyle:" : "ct 6/28/2025 22:56",
 		"rangesBlock:" : "ct 6/28/2025 22:58",
-		"rangesIn:" : "ct 6/29/2025 01:01",
+		"rangesIn:" : "ct 6/29/2025 02:23",
 		"setAttributesIn:fromRanges:" : "ct 6/28/2025 23:02",
-		"stTypeFor:" : "ct 6/28/2025 23:07",
+		"stTypeFor:" : "ct 6/29/2025 02:25",
 		"workspace:" : "ct 6/28/2025 23:09" } }

@@ -6,6 +6,8 @@ stTypeFor: aSymbol
 		caseOf:
 			{[#symbol] -> [#keyword].
 			[#number] -> [#number].
+			[#string] -> [#string].
 			[#comment] -> [#comment].
-			[#built_in] -> [#self]}
+			[#built_in] -> [#self].
+			[#meta] -> [nil]}
 		otherwise: [self halt]
