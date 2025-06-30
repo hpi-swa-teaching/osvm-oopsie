@@ -1,13 +1,11 @@
 startup/shutdown
 start
 
-	| eval json lowlight light toRanges |
+	| js lowlight light toRanges |
 	self flag: #todo. "
 	- add installation logic (Metacello + clone js files (or can we serve them from image?) [+ deno installation])
 		For now, you have to do it manually:
 			https://github.com/LinqLover/yaros
-	- automatically reset after resuming image
-	- automatically try to start server when requesting styler, stop trying when fails
 	- preference for directory path
 	- implement cleanUp and unload
 	- support further processor architectures, rename this class accordingly
@@ -27,13 +25,12 @@ start
 		yourself.
 	Yaros restart.
 	
-	eval := Yaros remoteObjectNamed: #eval.
-	json := Yaros remoteObjectNamed: #JSON.
+	js := Yaros remoteObjectNamed: #globalThis.
 	
-	lowlight := eval value: 'import("https://esm.sh/lowlight@3")'.
+	lowlight := js eval: 'import("https://esm.sh/lowlight@3")'.
 	light := lowlight createLowlight: lowlight all.
 	
-	toRanges := eval value: '(root, classMap = {}) => {
+	toRanges := js eval: '(root, classMap = {}) => {
 	  let offset = 0;
 	  const ranges = [];
 
@@ -86,4 +83,4 @@ start
 	CurrentRangesBlock := [:source |
 		| tree |
 		tree := light highlight: 'armasm' with: source.
-		(json stringify: (toRanges value: tree)) parseAsJson].
+		(js JSON stringify: (toRanges value: tree)) parseAsJson].
