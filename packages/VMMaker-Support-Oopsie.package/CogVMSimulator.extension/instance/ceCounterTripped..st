@@ -1,6 +1,6 @@
 *VMMaker-Support-Oopsie
 ceCounterTripped: condition
-	| counterTrippedSelector context shouldHandleInProxy |
+	| counterTrippedSelector context shouldHandleInProxy receiver |
 	shouldHandleInProxy := true.
 	self transcript cr; nextPutAll: 'counter tripped in '.
 	self shortPrintFrame: framePointer.
@@ -15,5 +15,21 @@ ceCounterTripped: condition
 		[instructionPointer := self popStack.
 		self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer)]
 			ensure: [self push: instructionPointer].
-	^ objectMemory booleanObjectOf:
-		(context vmObjectPerform: counterTrippedSelector with: (objectMemory booleanValueOf: condition))
+	
+	"Add a fake context of some method to prevent a divorce of `context` resulting in it simply being peeled.
+	We want a proper divorce and a following base frame return to occur"
+	receiver := objectMemory nilObject.
+	self push: receiver.
+	messageSelector := objectMemory maybeSplObj: SelectorMustBeBoolean. "no arguments, always present"
+	lkupClassTag := objectMemory fetchClassTagOf: objectMemory nilObject.
+	lkupClass := objectMemory classForClassTag: lkupClassTag.
+	self lookupMethodInClass: lkupClass.
+	self justActivateNewMethod: false.
+	
+	localReturnValue := objectMemory booleanObjectOf:
+		(context vmObjectPerform: counterTrippedSelector with: (objectMemory booleanValueOf: condition)).
+	self
+		internalizeIPandSP;
+		commonReturn;
+		externalizeIPandSP;
+		reenterInterpreter.
