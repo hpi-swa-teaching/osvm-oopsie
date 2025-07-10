@@ -2,6 +2,7 @@ controlling
 context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: receiver args: arguments do: aBlock
 
 	| objectMemory oop |
+	self flag: #todo. "why is this above the ProxyClass check?"
 	primitiveIndex = 188 ifTrue:
 		[| methodArg |
 		methodArg := arguments last.
@@ -14,6 +15,12 @@ context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: 
 	
 	(aContext objectClass: receiver) isVmObjectProxyClass ifFalse:
 		[^ super context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: receiver args: arguments do: aBlock].
+	
+	primitiveIndex = 173 ifTrue: [
+		^ aContext push: (self context: aContext proxy: (arguments atLast: 2 ifAbsent: [receiver]) instVarAt: (arguments atLast: 1))].
+	
+	primitiveIndex = 174 ifTrue: [
+		^ aContext push: (aContext simulatedObject: (arguments atLast: 3 ifAbsent: [receiver]) instVarAt: (arguments atLast: 2) put: (arguments last))].
 	
 	objectMemory := receiver xxxObjectMemory.
 	oop := receiver xxxOop.
