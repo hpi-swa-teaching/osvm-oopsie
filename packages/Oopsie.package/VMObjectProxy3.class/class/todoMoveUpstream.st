@@ -6,6 +6,9 @@ todoMoveUpstream
 	Concepts to move upstream:
 	- external objects
 	- symbolicTextWithSendAndBranchData
+	
+	Overview of external depencies:
+	- resolveProxy (required methods are contained in upstreamCompat:resolveProxy categories): https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/thread/Z7WDON3FBX6YOKRC4SW5NGN4HQXVP73Z/#Z7WDON3FBX6YOKRC4SW5NGN4HQXVP73Z
 	"
 
 	^ self systemNavigation
