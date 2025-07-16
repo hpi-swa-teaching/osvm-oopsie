@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-fields
 fieldVmMemory
 
 	^ (self newFieldForType: #vm key: #vmAddress)

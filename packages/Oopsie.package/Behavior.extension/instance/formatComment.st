@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-upstream:Trunk - tools - inspection
 formatComment
 
 	^ Text streamContents: [:stream |

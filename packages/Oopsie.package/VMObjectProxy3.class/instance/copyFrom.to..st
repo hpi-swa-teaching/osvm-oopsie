@@ -1,9 +1,10 @@
-as yet unclassified
+copying
 copyFrom: start to: stop
+	"Overridden for performance (?)"
 
 	| newSize |
 	newSize := stop - start + 1.
-	^(self species vmObjectClass theNonMetaClass new: newSize)
+	^(self species new: newSize)
 		replaceFrom: 1
 		to: newSize
 		with: self

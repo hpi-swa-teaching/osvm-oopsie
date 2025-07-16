@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-scorching
 handleTrapInHost: aSymbol withArgs: aCollection
 	| context receiver |
 	context := self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer).

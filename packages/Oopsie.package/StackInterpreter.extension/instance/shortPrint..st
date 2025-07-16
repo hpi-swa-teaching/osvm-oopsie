@@ -1,4 +1,4 @@
-*Oopsie-simulation-override
+*Oopsie-external objects-upstream:VMMaker-simulation-override
 shortPrint: oop
 	<doNotGenerate>
 	| name classOop key |

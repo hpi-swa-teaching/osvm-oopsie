@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstream:VMMaker-class initialization-override
 initializeBytecodeTableForSistaV1
 	"StackToRegisterMappingCogit initializeBytecodeTableForSistaV1"
 

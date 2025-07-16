@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 vmObjectMemory
 	<primitive: #primitiveObjectMemory module: #Oopsie>
 

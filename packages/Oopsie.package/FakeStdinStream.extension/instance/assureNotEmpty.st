@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-upstream:VMMaker-accessing
 assureNotEmpty
 	| inputLine |
 	position < readLimit ifTrue: [^ self].

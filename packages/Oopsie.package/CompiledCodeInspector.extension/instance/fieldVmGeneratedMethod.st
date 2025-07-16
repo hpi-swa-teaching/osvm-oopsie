@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-fields
 fieldVmGeneratedMethod
 
 	^ (self newFieldForType: #vm key: #vmGeneratedMethod)

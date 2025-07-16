@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-upstream:VMMaker-*VMMakerUI-support
 promptExpression: string
 	<doNotGenerate>
 	^ Project uiManager

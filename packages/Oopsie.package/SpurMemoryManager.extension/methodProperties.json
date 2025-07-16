@@ -9,4 +9,5 @@
 		"firstExternalObjectIndex" : "mad 5/20/2025 18:44",
 		"is:instanceOfAnyOf:" : "mad 6/12/2025 15:56",
 		"isExternalObject:" : "ct 5/20/2025 19:32",
-		"printImmediateObject:on:" : "ct 6/23/2025 22:33" } }
+		"printImmediateObject:on:" : "ct 6/23/2025 22:33",
+		"printStringForObjectInDebugger:" : "ct 7/3/2025 00:00" } }

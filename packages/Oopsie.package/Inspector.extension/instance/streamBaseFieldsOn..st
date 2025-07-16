@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-upstream:Trunk-fields - streaming-override
 streamBaseFieldsOn: aStream
 
 	aStream

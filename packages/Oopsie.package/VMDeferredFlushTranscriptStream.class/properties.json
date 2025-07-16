@@ -1,15 +1,15 @@
 {
-	"category" : "Oopsie",
+	"category" : "Oopsie-upstream:VMMaker-VMMakerUI-InterpreterSimulation-Morphic",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "mad 6/3/2025 15:18",
+	"commentStamp" : "",
 	"instvars" : [
 		"innerTranscript",
 		"flushQueued" ],
 	"name" : "VMDeferredFlushTranscriptStream",
 	"pools" : [
-		"VMObjectIndices" ],
+		 ],
 	"super" : "WriteStream",
 	"type" : "normal" }

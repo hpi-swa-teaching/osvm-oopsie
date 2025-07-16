@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-external objects-upstream:VMMaker
 externalObjectOf: anObject
 	^ self characterObjectOf:
 		((self externalObjectIndices

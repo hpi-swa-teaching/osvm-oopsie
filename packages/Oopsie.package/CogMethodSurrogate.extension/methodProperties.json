@@ -3,6 +3,7 @@
 		 },
 	"instance" : {
 		"disassembleOn:" : "mad 5/25/2025 20:05",
+		"disassembleString" : "ct 7/11/2025 21:29",
 		"inspectorClass" : "ct 5/25/2025 23:15",
 		"methodObjectProxy" : "mad 5/25/2025 22:09",
 		"selectorProxy" : "mad 5/25/2025 22:09",

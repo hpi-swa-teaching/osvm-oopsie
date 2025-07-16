@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-scorching-override
 ceSistaTrap
 	"When we arrive here, the value that trapped is pushed on stack"
 	<api>

@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-upstream:VMMaker-accessing
 detectOrLoadPlugin: pluginString
 	^ (self pluginList
 		detect: [:each | each key = pluginString]

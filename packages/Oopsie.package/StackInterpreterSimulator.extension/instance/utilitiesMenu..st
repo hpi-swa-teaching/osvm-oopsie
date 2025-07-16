@@ -1,4 +1,4 @@
-*Oopsie-*VMMakerUI-user interface-override
+*Oopsie-upstream:VMMaker-*VMMakerUI-user interface-override
 utilitiesMenu: aMenuMorph
 	aMenuMorph
 		add: 'send input to stdin' action: #sendInputToStdin;

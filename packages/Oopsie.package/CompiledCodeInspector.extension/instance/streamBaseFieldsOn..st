@@ -1,4 +1,4 @@
-*Oopsie-fields-override
+*Oopsie-upstream:Trunk-fields - streaming-override
 streamBaseFieldsOn: aStream
 	"Instead of 'all inst vars' show all byte codes and header summary."
 	

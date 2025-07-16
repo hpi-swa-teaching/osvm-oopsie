@@ -1,4 +1,4 @@
-accessing
+converting
 xxxOopIn: anObjectMemory
 
 	anObjectMemory == objectMemory ifTrue: [^ oop].

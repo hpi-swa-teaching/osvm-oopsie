@@ -1,4 +1,4 @@
-*Oopsie-debug printing interpreter support-override
+*Oopsie-external objects-upstream:VMMaker-debug printing interpreter support-override
 printImmediateObject: oop on: aStream
 	<var: 'aStream' type: #'FILE *'>
 	self assert: (self isImmediate: oop).

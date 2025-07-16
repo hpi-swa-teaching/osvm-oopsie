@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstream:VMMaker-initialization-override
 initializeBytecodeTableForSistaV1
 	"See e.g. the cass comment for EncoderForSistaV1"
 	"StackInterpreter initializeBytecodeTableForSistaV1"

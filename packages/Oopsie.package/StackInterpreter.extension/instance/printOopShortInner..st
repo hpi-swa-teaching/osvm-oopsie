@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-external objects-upstream:VMMaker-debug printing
 printOopShortInner: oop
 	| classOop name nameLen |
 	<var: #name type: #'char *'>

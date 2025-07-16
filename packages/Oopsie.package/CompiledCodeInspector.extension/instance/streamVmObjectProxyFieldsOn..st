@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-fields - streaming
 streamVmObjectProxyFieldsOn: aStream
 
 	super streamVmObjectProxyFieldsOn: aStream.

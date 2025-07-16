@@ -1,1 +1,0 @@
-A VMDeferredFlushTranscriptStream behaves like a TranscriptStream, but buffers all content until the next deferred UI message. This avoids costly text layouting in TextComposer.

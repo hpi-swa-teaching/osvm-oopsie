@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstream:VMMaker-type inference-override
 returnTypeForSend: sendNode in: aTMethod ifNil: typeIfNil
 	"Answer the return type for a send.  Unbound sends default to typeIfNil.
 	 Methods with types as yet unknown have a type determined either by the

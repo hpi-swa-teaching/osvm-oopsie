@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-fields
 fieldVmBody
 
 	^ (self newFieldForType: #vm key: #vmCompiledCodeBody)

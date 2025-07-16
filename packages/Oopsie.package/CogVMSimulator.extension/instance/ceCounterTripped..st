@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-scorching-override
 ceCounterTripped: condition
 	| counterTrippedSelector shouldHandleInProxy |
 	shouldHandleInProxy := true.

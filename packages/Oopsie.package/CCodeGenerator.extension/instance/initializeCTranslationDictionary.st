@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstream:VMMaker-C translation support-override
 initializeCTranslationDictionary 
 	"Initialize the dictionary mapping message names to actions for C code generation."
 
