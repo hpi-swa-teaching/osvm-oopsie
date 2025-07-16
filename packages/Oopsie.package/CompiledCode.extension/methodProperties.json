@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"newBytes:trailerBytes:nArgs:nTemps:nStack:nLits:primitive:flag:" : "mad 5/22/2025 16:32" },
+		 },
 	"instance" : {
 		"longPrintWithSendAndBranchDataOn:" : "ct 5/16/2025 23:58",
 		"longPrintWithSendAndBranchDataOn:indent:" : "ct 5/26/2025 00:13",
