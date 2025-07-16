@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstreamCompat:resolveProxy-accessing-override
 at: index put: aCharacter
 	"Primitive. Store the Character in the field of the receiver indicated by the index.
 	 Fail if the index is not an Integer or is out of bounds, or if the argument is not a
@@ -10,12 +10,17 @@ at: index put: aCharacter
 		[^self errorImproperStore].
 	index isInteger
 		ifTrue:
-			[ec == #'no modification' ifTrue:
+			[index isProxy ifTrue:
+				[^self at: index resolveProxy put: aCharacter].
+			 ec == #'no modification' ifTrue:
 				[^thisContext modificationForbiddenFor: self at: index putCharacter: aCharacter].
 			 aCharacter isOctetCharacter ifFalse: "Convert to WideString"
 				[self becomeForward: (WideString from: self).
 				^self at: index put: aCharacter].
 			 aCharacter isProxy ifTrue:
-				[^self at: index put: aCharacter resolveProxyCharacter].
+				[^self at: index put: aCharacter resolveProxy].
 			 self errorSubscriptBounds: index]
-		ifFalse: [self errorNonIntegerIndex]
+		ifFalse:
+			[index isNumber ifTrue:
+				[^self at: index asInteger put: aCharacter].
+			self errorNonIntegerIndex]

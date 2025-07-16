@@ -1,4 +1,4 @@
 *Oopsie-proxies
 resolveVmObjectProxy: proxy
 
-	^ proxy vmClassObject
+	^ self value: proxy codePoint

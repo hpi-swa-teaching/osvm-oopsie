@@ -1,4 +1,4 @@
 *Oopsie-proxies
 resolveVmObjectProxy: proxy
 
-	^ proxy vmClassObject
+	^ Compiler evaluate: proxy storeString

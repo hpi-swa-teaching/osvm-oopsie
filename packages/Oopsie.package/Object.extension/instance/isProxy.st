@@ -1,4 +1,0 @@
-*Oopsie
-isProxy
-
-	^ false

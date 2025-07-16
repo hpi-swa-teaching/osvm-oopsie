@@ -1,4 +1,4 @@
 *Oopsie-proxies
 resolveVmObjectProxy: proxy
 
-	^ proxy vmClassObject
+	^ proxy asByteArray asString

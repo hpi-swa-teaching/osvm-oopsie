@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstreamCompat:resolveProxy-copying-override
 copyBits
 	"Primitive. Perform the movement of bits from the source form to the 
 	destination form. Fail if any variables are not of the right type (Integer, 
@@ -46,15 +46,52 @@ copyBits
 		[colorMap := colorMap colors.
 		^self copyBits].
 	
+	destForm width isProxy ifTrue:
+		[destForm instVarNamed: 'width' put: destForm width resolveProxy.
+		^self copyBits].
+	destForm height isProxy ifTrue:
+		[destForm instVarNamed: 'height' put: destForm height resolveProxy.
+		^self copyBits].
+	self flag: #ct. "If a proxy looks like a Form or color map (begins with compatible instance variables), we ought to test proxies *before* executing the primitive. However this situation has not yet occurred and the current way is easier."
 	sourceForm isProxy ifTrue:
-		[sourceForm := sourceForm resolveProxyForm.
-		^ self copyBits].
+		[sourceForm := sourceForm resolveProxy.
+		^self copyBits].
 	halftoneForm isProxy ifTrue:
-		[halftoneForm := halftoneForm resolveProxyColor.
+		[halftoneForm := halftoneForm resolveProxy.
 		^self copyBits].
 	colorMap isProxy ifTrue:
-		[colorMap := colorMap resolveProxyColorMap.
+		[colorMap := colorMap resolveProxy.
 		^self copyBits].
+	destX isProxy ifTrue:
+		[destX := destX resolveProxy.
+		^ self copyBits].
+	destY isProxy ifTrue:
+		[destY := destY resolveProxy.
+		^ self copyBits].
+	width isProxy ifTrue:
+		[width := width resolveProxy.
+		^ self copyBits].
+	height isProxy ifTrue:
+		[height := height resolveProxy.
+		^ self copyBits].
+	sourceX isProxy ifTrue:
+		[sourceX := sourceX resolveProxy.
+		^ self copyBits].
+	sourceY isProxy ifTrue:
+		[sourceY := sourceY resolveProxy.
+		^ self copyBits].
+	clipX isProxy ifTrue:
+		[clipX := clipX resolveProxy.
+		^ self copyBits].
+	clipY isProxy ifTrue:
+		[clipY := clipY resolveProxy.
+		^ self copyBits].
+	clipWidth isProxy ifTrue:
+		[clipWidth := clipWidth resolveProxy.
+		^ self copyBits].
+	clipHeight isProxy ifTrue:
+		[clipHeight := clipHeight resolveProxy.
+		^ self copyBits].
 	
 	"Check if clipping got way out of range"
 	self clipRange.
