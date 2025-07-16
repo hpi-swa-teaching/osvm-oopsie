@@ -3,7 +3,8 @@
 		"initializeBytecodeTableForSistaV1" : "mad 6/12/2025 15:18" },
 	"instance" : {
 		"branchOnBehaviorLiteral" : "mad 6/19/2025 19:16",
-		"inspectOop:" : "ct 5/15/2025 21:30",
+		"inspectOop:" : "ct 7/16/2025 21:22",
 		"printOopShortInner:" : "mad 6/19/2025 15:04",
 		"proxyForOop:" : "ct 6/8/2025 19:57",
-		"shortPrint:" : "ct 6/23/2025 22:33" } }
+		"shortPrint:" : "ct 6/23/2025 22:33",
+		"wantsToUseOopsie" : "ct 7/16/2025 21:22" } }

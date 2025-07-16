@@ -1,4 +1,9 @@
-*Oopsie
+*Oopsie-upstream:VMMaker-debug inspection
 inspectOop: oop
 
-	^ ToolSet inspect: (self proxyForOop: oop)
+	self wantsToUseOopsie ifTrue:
+		[^ ToolSet inspect: (self proxyForOop: oop)].
+	
+	^ (CogOopInspector on: self)
+		oop: oop;
+		open
