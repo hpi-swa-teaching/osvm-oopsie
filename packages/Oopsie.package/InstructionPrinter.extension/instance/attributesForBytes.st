@@ -1,4 +1,0 @@
-*Oopsie-(-pseudo)-override
-attributesForBytes
-
-	^ {}
