@@ -1,7 +1,7 @@
-*Oopsie-fields-override
+*Oopsie-upstream:Scorching-fields-override
 fieldByteCodes
 
 	^ (self newFieldForType: #all key: #byteCodes)
 		name: 'all bytecodes' translated; emphasizeName;
-		valueGetter: [:obj | obj symbolicWithSendAndBranchData]; printValueAsIs;
+		valueGetter: [:obj | obj symbolicTextWithSendAndBranchData]; printValueAsIs;
 		yourself
