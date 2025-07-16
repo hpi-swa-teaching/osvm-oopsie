@@ -1,10 +1,8 @@
-*Oopsie
+*Oopsie-upstream:VMMaker-disassembly
 styledDisassembleText
 
 	| string |
-	string := (String streamContents: [:stream |
-		self disassembleOn: stream])
-			withBlanksTrimmed.
-	X86AsmStyler isReady ifTrue:
-		[^ X86AsmStyler new styledTextFor: string asText].
+	string := self disassembleString.
+	(TextStyler for: #DecoratedAssembler) ifNotNil: [:stylerClass |
+		^ stylerClass new styledTextFor: string asText].
 	^ string

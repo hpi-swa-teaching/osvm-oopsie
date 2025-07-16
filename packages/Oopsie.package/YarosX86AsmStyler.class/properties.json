@@ -1,0 +1,14 @@
+{
+	"category" : "Oopsie-Stylers",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "YarosX86AsmStyler",
+	"pools" : [
+		 ],
+	"super" : "YarosStyler",
+	"type" : "normal" }

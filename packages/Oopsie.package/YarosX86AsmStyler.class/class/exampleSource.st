@@ -1,7 +1,8 @@
-as yet unclassified
+examples
 exampleSource
 
 	^
+"Language=X86Asm"
 '.section .data
     hello:     .asciz "Hello, World!\n"  ; The string to print
 

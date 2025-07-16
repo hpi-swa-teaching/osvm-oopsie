@@ -1,16 +1,13 @@
 {
-	"category" : "Oopsie",
+	"category" : "Oopsie-upstream:VMMaker-VMMakerUI-Stylers",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
-		"CurrentRangesBlock",
-		"JsProcess",
-		"Yaros",
-		"YarosJsServerDirectory" ],
+		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"rangesBlock" ],
-	"name" : "X86AsmStyler",
+		"assemblerLanguage" ],
+	"name" : "DecoratedAssemblerStyler",
 	"pools" : [
 		 ],
 	"super" : "SHTextStyler",

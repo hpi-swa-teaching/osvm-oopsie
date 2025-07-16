@@ -1,0 +1,18 @@
+{
+	"class" : {
+		"exampleSource" : "ct 7/16/2025 22:32",
+		"initialize" : "ct 7/16/2025 22:32",
+		"language" : "ct 7/16/2025 22:32",
+		"unload" : "ct 7/16/2025 22:32" },
+	"instance" : {
+		"assemblerLanguage" : "ct 7/11/2025 21:04",
+		"assemblerLanguage:" : "ct 7/11/2025 21:03",
+		"attributesFor:" : "ct 7/16/2025 21:59",
+		"classOrMetaClass:" : "ct 7/11/2025 21:07",
+		"initialize" : "ct 7/11/2025 21:04",
+		"privateFormat:" : "ct 7/11/2025 21:07",
+		"privateStyle:" : "ct 7/11/2025 21:07",
+		"rangesIn:" : "ct 7/16/2025 21:59",
+		"rangesInBody:" : "ct 7/16/2025 21:59",
+		"setAttributesIn:fromRanges:" : "ul 5/18/2015 03:40",
+		"workspace:" : "ct 7/11/2025 21:07" } }

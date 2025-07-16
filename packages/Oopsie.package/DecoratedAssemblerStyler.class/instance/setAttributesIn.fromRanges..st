@@ -47,3 +47,4 @@ setAttributesIn: aText fromRanges: ranges
 	oldRuns withStartStopAndValueDo: [ :start :stop :attribs |
 		(attribs anySatisfy: [ :each | each shoutShouldPreserve ]) ifTrue: [
 			attribs do: [ :each | aText addAttribute: each from: start to: stop ] ] ].
+	
