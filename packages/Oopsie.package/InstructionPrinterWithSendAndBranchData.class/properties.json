@@ -1,0 +1,14 @@
+{
+	"category" : "Oopsie",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"sendAndBranchData" ],
+	"name" : "InstructionPrinterWithSendAndBranchData",
+	"pools" : [
+		 ],
+	"super" : "InstructionPrinter",
+	"type" : "normal" }

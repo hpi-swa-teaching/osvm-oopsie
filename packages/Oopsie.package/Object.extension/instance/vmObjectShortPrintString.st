@@ -1,0 +1,4 @@
+*Oopsie
+vmObjectShortPrintString
+
+	^ self printString

@@ -1,0 +1,3 @@
+*Oopsie
+unusedBytecode
+	^ self step

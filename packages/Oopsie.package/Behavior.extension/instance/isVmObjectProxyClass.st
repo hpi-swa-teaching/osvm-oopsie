@@ -1,0 +1,4 @@
+*Oopsie-testing
+isVmObjectProxyClass
+
+	^ false

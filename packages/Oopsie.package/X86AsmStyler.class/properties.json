@@ -1,0 +1,17 @@
+{
+	"category" : "Oopsie",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"CurrentRangesBlock",
+		"JsProcess",
+		"Yaros",
+		"YarosJsServerDirectory" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"rangesBlock" ],
+	"name" : "X86AsmStyler",
+	"pools" : [
+		 ],
+	"super" : "SHTextStyler",
+	"type" : "normal" }
