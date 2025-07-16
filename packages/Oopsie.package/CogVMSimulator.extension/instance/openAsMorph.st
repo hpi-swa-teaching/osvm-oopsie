@@ -1,4 +1,4 @@
-*Oopsie-override
+*Oopsie-upstream:VMMaker-*VMMakerUI-InterpreterSimulation-Morphic-override
 openAsMorph
 	"Open a morphic view on this simulation."
 	| localImageName borderWidth window |
