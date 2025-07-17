@@ -1,6 +1,7 @@
-as yet unclassified
-vmObjectClassObject
+accessing
+vmObjectClassObject 
+	"Answer a proxy pointing to the oop of the class of the object represented by the receiver."
+	<primitive: #primitiveClass module: #Oopsie>
 
-	^ self vmObjectDo: [:objectMemory :oop |
-		self class forObjectMemory: objectMemory oop:
-			(objectMemory fetchClassOf: oop)]
+	^ self class forObjectMemory: self vmObjectMemory oop:
+		(self vmObjectMemory fetchClassOf: self vmOop)

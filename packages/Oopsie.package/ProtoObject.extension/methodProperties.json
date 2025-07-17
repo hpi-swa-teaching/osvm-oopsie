@@ -4,5 +4,7 @@
 	"instance" : {
 		"isProxy" : "ct 6/8/2025 20:53",
 		"resolveProxy" : "ct 6/8/2025 23:49",
-		"vmObjectMemory" : "ct 5/15/2025 20:01",
+		"vmObjectHeaderInfo" : "ct 7/17/2025 02:39",
+		"vmObjectMemory" : "ct 7/17/2025 01:51",
+		"vmObjectMemoryInfo" : "ct 7/17/2025 02:15",
 		"vmOop" : "ct 5/15/2025 20:02" } }

@@ -9,7 +9,8 @@
 		"context:send:to:with:do:" : "ct 6/8/2025 19:27",
 		"context:send:to:with:lookupIn:do:" : "ct 5/15/2025 19:55",
 		"context:simulatedObject:instVarAt:put:do:" : "mad 6/26/2025 11:43",
-		"context:tryNamedPrimitiveIn:for:withArgs:do:" : "ct 5/22/2025 22:39",
+		"context:tryNamedPrimitiveIn:for:withArgs:do:" : "ct 7/4/2025 12:53",
+		"context:tryOopsiePrimitiveIn:for:withArgs:" : "ct 7/17/2025 02:24",
 		"context:withObjectMemory:receiver:arguments:simulatePrimitive:" : "ct 5/16/2025 23:54",
 		"proxyClass" : "ct 5/15/2025 16:54",
 		"sandbox" : "ct 5/15/2025 17:05" } }

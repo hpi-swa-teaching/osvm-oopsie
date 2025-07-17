@@ -2,8 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"vmObjectPerform:" : "ct 6/25/2025 22:37",
-		"vmObjectPerform:with:" : "ct 6/25/2025 22:37",
-		"vmObjectPerform:withArgs:" : "ct 6/25/2025 22:44",
+		"oopsieUnsimulatedPerform:" : "ct 7/17/2025 01:54",
+		"oopsieUnsimulatedPerform:with:" : "ct 7/17/2025 01:54",
+		"oopsieUnsimulatedPerform:withArgs:" : "ct 7/17/2025 01:55",
+		"streamVmObjectFieldsFor:on:" : "ct 7/2/2025 21:12",
 		"vmObjectShortPrintString" : "ct 5/17/2025 01:31",
 		"xxxOopIn:" : "ct 5/20/2025 19:33" } }

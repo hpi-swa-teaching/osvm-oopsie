@@ -1,4 +1,4 @@
-as yet unclassified
+*Oopsie-tools - inspection
 vmObjectMemoryInfo
 
 	^ '{1} ({2})' format:

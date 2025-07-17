@@ -1,5 +1,5 @@
-as yet unclassified
+accessing
 vmClassObject
+	"Assuming that the proxied oop represented by the receiver points to a class, answer the corresponding class in the host image."
 
-	^ self vmObjectDo: [:objectMemory :oop |
-		self vmObjectClassFor: oop]
+	^ self vmObjectClassFor: self vmOop

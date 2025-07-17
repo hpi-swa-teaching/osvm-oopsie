@@ -3,10 +3,8 @@ context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: a
 
 	| literal objectMemory oop address |
 	literal := aCompiledMethod literalAt: 1.
-	(literal isArray and: [literal first == #Oopsie] and: [literal second == #primitiveObjectMemory]) ifTrue: [
-		^ receiver xxxObjectMemory].
-	(literal isArray and: [literal first == #Oopsie] and: [literal second == #primitiveOop]) ifTrue: [
-		^ receiver xxxOop].
+	(literal isArray and: [literal first == #Oopsie]) ifTrue:
+		[^ self context: aContext tryOopsiePrimitiveIn: aCompiledMethod for: receiver withArgs: arguments].
 	
 	(aContext objectClass: receiver) isVmObjectProxyClass ifFalse:
 		[^ super context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: arguments do: aBlock].
@@ -16,5 +14,5 @@ context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: a
 	
 	^ self context: aContext withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter |
 		interpreter argumentCount: 0.
-		address := objectMemory ioLoadFunction: literal second From: literal first.
+		address := objectMemory interpreter basicIoLoadFunction: literal second From: literal first.
 		interpreter callExternalPrimitive: address]

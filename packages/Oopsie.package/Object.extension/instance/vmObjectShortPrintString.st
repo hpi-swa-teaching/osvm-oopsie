@@ -1,4 +1,4 @@
-*Oopsie
+*Oopsie-printing
 vmObjectShortPrintString
 
 	^ self printString

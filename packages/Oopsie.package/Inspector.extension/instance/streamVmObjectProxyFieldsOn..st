@@ -1,9 +1,8 @@
-*Oopsie
+*Oopsie-fields - streaming
 streamVmObjectProxyFieldsOn: aStream
 
 	aStream
 		nextPut: self fieldVmMemory;
 		nextPut: self fieldVmHeader.
 	
-	self object isString ifTrue:
-		[aStream nextPut: self fieldVmStringBytes].
+	self object streamVmObjectFieldsFor: self on: aStream.

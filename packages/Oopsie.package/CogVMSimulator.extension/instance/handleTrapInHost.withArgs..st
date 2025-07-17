@@ -14,7 +14,7 @@ handleTrapInHost: aSymbol withArgs: aCollection
 	self justActivateNewMethod: false.
 	
 	localReturnValue := objectMemory booleanObjectOf:
-		(context vmObjectPerform: aSymbol withArgs: aCollection).
+		(context oopsieUnsimulatedPerform: aSymbol withArgs: aCollection).
 	self
 		internalizeIPandSP;
 		commonReturn;
