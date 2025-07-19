@@ -97,10 +97,10 @@ utilitiesMenu: aMenuMorph
 				ifFalse: ['single step'])
 			action: [cogit singleStep: cogit singleStep not];
 		add: 'click step' action: [cogit setClickStepBreakBlock];
-		add: ((InitializationOptions at: #haltOnExecuteMethod ifAbsent: false)
+		add: ((InitializationOptions at: #haltOnExecuteMethod ifAbsent: [false])
 				ifTrue: [ 'no break on execute method']
 				ifFalse: ['break on execute method'])
-			action: [InitializationOptions at: #haltOnExecuteMethod put: (InitializationOptions at: #haltOnExecuteMethod) not];
+			action: [InitializationOptions at: #haltOnExecuteMethod put: (InitializationOptions at: #haltOnExecuteMethod ifAbsent: [false]) not];
 		add: 'set break pc', cogit breakPC menuPrompt, '...-ve to disable or remove' action: [cogit promptForBreakPC];
 		add: 'set break count...' action: [|s| s := UIManager default request: 'break count (dec)'.
 											s notEmpty ifTrue: [breakCount := Integer readFrom: s readStream]];
