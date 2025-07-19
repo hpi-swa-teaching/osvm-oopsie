@@ -2,7 +2,7 @@
 
 > Malicious tongues claim it stands for *Object-Oriented PointerS Inspection EnginE* or even *Object-Oriented Pointers inSpection engInE* instead.
 
-OOPSIE is a proxy framework for the [OpenSmalltalk-VM](https://github.com/OpenSmalltalk/opensmalltalk-vm) [simulator](https://dl.acm.org/doi/10.1145/3281287.3281295), designed to facilitate the bootstrapping of [Scorch](https://github.com/clementbera/Scorch)/Sista and interactive exploration and debugging of pointers from a simulated image.
+OOPSIE is a proxy framework for the [OpenSmalltalk-VM](https://github.com/OpenSmalltalk/opensmalltalk-vm) [simulator](https://dl.acm.org/doi/10.1145/3281287.3281295), designed to facilitate the bootstrapping of [Scorch](https://github.com/clementbera/Scorch)/Sista and for interactive exploration and debugging of pointers from a simulated image.
 
 This project was initially developed in the context of a Master's Project @ [hpi-swa-teaching](https://github.com/hpi-swa-teaching) in summer 2025. Many thanks to Marcel Taeumel ([@marceltaeumel](https://github.com/marceltaeumel)) and Eliot Miranda ([@eliotmiranda](https://github.com/eliotmiranda)) for their diligent support and guidance throughout the project!
 
