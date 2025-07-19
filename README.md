@@ -10,9 +10,9 @@ This project was initially developed in the context of a Master's Project @ [hpi
 
 1. Clone the OSVM repo and follow the instructions in their readme to build a VMMaker image and a spurreader image
 2. Install [git-s](https://github.com/hpi-swa/git-s)
-3. In Git-S, clone and checkout this repository
+3. In Git-S, clone and check out this repository
 
-For Scorch, also clone [our fork](https://github.com/MariusDoe/Scorch) and checkout the `squeak` branch via Git-S.
+For Scorch, also clone [our fork](https://github.com/MariusDoe/Scorch) and check out the `squeak` branch via Git-S.
 
 ## Usage
 
