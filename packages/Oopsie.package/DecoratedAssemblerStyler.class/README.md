@@ -1,0 +1,1 @@
+I style decorated assembler code as emitted by Cog methods by parsing and colorizing its basic structure. Additionally, I can delegate styling of the actual extracted undecorated assembler code to another TextStyler if one is registered in the system (e.g., YarosX86AsmStyler).
