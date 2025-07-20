@@ -1,0 +1,1 @@
+I make the transcript in the SimulatorMorph much faster, but I've forgotten how I achieve this and I'm skeptical whether my existence is legitimate or should be replaced by a more generic solution in the Trunk. (If you can see this comment, most likely, somebody forgot to update it.)

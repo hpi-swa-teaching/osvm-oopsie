@@ -5,7 +5,7 @@
 	"classvars" : [
 		"Mirror",
 		"VMPrimitives" ],
-	"commentStamp" : "",
+	"commentStamp" : "ct 7/19/2025 22:38",
 	"instvars" : [
 		"sandbox" ],
 	"name" : "VMObjectProxySimulator",
