@@ -6,6 +6,5 @@ v4: descriptor Branch: pc On: nExts BehaviorLiteralDistance: aMethodObj
 	| extBValue |
 	self assert: nExts >= 0.
 	self parseV4Exts: nExts priorTo: pc in: aMethodObj into: [:ea :eb| extBValue := eb].
-	numExtB := 0.
 	^(objectMemory fetchByte: pc + 2 ofObject: aMethodObj)
 	+ ((extBValue bitAnd: 127) << 8)

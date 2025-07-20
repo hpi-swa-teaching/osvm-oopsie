@@ -8,10 +8,12 @@ genBranchOnBehaviorLiteral
 	self ssTop popToReg: testReg.
 	self ssPop: 1.
 	literalIndex := byte1 + (extA << 8).
+	extA := 0.
 	literal := self getLiteral: literalIndex.
 	distance := byte2 + ((extB bitAnd: 127) << 8).
 	isNegated := extB >= 0.
 	extB := 0.
+	numExtB := 0.
 	target := distance + 3 + bytecodePC.
 	targetFixUp := self cCoerceSimple: (self ensureFixupAt: target) to: #'AbstractInstruction *'.
 	(objectMemory isArray: literal)

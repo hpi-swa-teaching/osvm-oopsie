@@ -5,9 +5,12 @@ branchOnBehaviorLiteral
 	| object literalIndex literal distance isNegated isInstance |
 	object := self internalStackTop.
 	literalIndex := self fetchByte + (extA << 8).
+	extA := 0.
 	literal := self literal: literalIndex.
 	distance := self fetchByte + ((extB bitAnd: 127) << 8).
 	isNegated := extB >= 0.
+	extB := 0.
+	numExtB := 0.
 	isInstance := (objectMemory isArray: literal)
 					ifTrue: [objectMemory is: object instanceOfAnyOf: literal]
 					ifFalse: [objectMemory is: object instanceOf: literal].
