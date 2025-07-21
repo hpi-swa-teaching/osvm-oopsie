@@ -12,7 +12,7 @@ unarySizeInlinePrimitive: primIndex
 				 self assert: (result between: 0 and: objectMemory maxSmallInteger // 4 - 1)].
 		"1002	pointer basicSize"
 		[2] ->	[self assert: (objectMemory isPointers: top).
-				 self notYetImplemented].
+				 self error: 'notYetImplemented'].
 		"1003	numBytes
 		 byte object => Smi between 0 and SmallInteger maxVal - 9 (Includes compiled code)"
 		[3]	->	[self assert: (objectMemory isBytes: top).

@@ -3,8 +3,9 @@ printOopShortInner: oop
 	| classOop name nameLen |
 	<var: #name type: #'char *'>
 	<inline: false>
-	(objectMemory isExternalObject: oop) ifTrue:
-		[^'external %s' f: transcript printf: { (objectMemory externalValueOf: oop) printString }].
+	self cCode: [] inSmalltalk:
+		[(objectMemory isExternalObject: oop) ifTrue:
+			[^'external %s' f: transcript printf: { (objectMemory externalValueOf: oop) printString }]].
 	(objectMemory isImmediate: oop) ifTrue:
 		[(objectMemory isImmediateCharacter: oop) ifTrue:
 			[^'$%c(%lx)' f: transcript printf: { self cCoerceSimple: (objectMemory characterValueOf: oop) to: #int.

@@ -1,5 +1,6 @@
 *Oopsie-external objects-upstream:VMMaker
 externalObjectOf: anObject
+	<doNotGenerate>
 	^ self characterObjectOf:
 		((self externalObjectIndices
 			at: anObject

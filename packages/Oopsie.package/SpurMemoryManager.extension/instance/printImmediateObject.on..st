@@ -2,8 +2,9 @@
 printImmediateObject: oop on: aStream
 	<var: 'aStream' type: #'FILE *'>
 	self assert: (self isImmediate: oop).
-	(self isExternalObject: oop) ifTrue:
-		['%P=external %s\n' f: aStream printf: {oop asVoidPointer. (self externalValueOf: oop) printString}].
+	self cCode: [] inSmalltalk:
+		[(self isExternalObject: oop) ifTrue:
+			['%P=external %s\n' f: aStream printf: {oop asVoidPointer. (self externalValueOf: oop) printString}]].
 	(self isIntegerObject: oop) ifTrue:
 		['%P=%ld\n' f: aStream printf: {oop asVoidPointer. (self integerValueOf: oop) asInteger}].
 	(self isImmediateCharacter: oop) ifTrue:

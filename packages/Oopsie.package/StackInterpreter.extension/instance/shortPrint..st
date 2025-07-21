@@ -3,8 +3,9 @@ shortPrint: oop
 	<doNotGenerate>
 	| name classOop key |
 	(objectMemory isImmediate: oop) ifTrue:
-		[(objectMemory isExternalObject: oop) ifTrue:
-			[^'=external ' , ([(objectMemory externalValueOf: oop) printString] ifError: [:msg | msg])].
+		[self cCode: [] inSmalltalk:
+			[(objectMemory isExternalObject: oop) ifTrue:
+				[^'=external ' , ([(objectMemory externalValueOf: oop) printString] ifError: [:msg | msg])]].
 		(objectMemory isImmediateCharacter: oop) ifTrue:
 			[^(objectMemory characterValueOf: oop) < 256
 				ifTrue:
