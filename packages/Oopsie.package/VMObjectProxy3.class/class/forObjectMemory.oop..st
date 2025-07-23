@@ -8,6 +8,6 @@ forObjectMemory: anObjectMemory oop: oop
 	(anObjectMemory isCharacterObject: oop) ifTrue: [^ Character value: (anObjectMemory characterValueOf: oop)].
 	(anObjectMemory isIntegerObject: oop) ifTrue: [^ anObjectMemory integerValueOf: oop].
 	(anObjectMemory isImmediateFloat: oop) ifTrue: [^ anObjectMemory floatValueOf: oop].
-	anObjectMemory nilObject == oop ifTrue: [^ nil flag: #hacked].
+	anObjectMemory nilObject == oop ifTrue: [^ nil].
 	
 	^ self newForObjectMemory: anObjectMemory oop: oop
