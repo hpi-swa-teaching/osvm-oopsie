@@ -1,4 +1,4 @@
-*Oopsie-upstream:Trunk-fields - streaming-override
+*Oopsie-upstream:MethodMassage-*MethodMassage-Tools-*Oopsie-upstream:Trunk-fields - streaming-override-override
 streamBaseFieldsOn: aStream
 	"Instead of 'all inst vars' show all byte codes and header summary."
 	
@@ -11,3 +11,5 @@ streamBaseFieldsOn: aStream
 		nextPut: self fieldDecompile;
 		nextPut: self fieldByteCodes;
 		nextPut: self fieldHeader.
+	aStream
+		nextPut: (self object inspectorFieldAssemblerFor: self).
