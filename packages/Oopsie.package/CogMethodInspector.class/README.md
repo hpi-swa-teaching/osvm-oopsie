@@ -1,0 +1,1 @@
+I am an Inspector that is specialized for inspecting CogMethodSurrogates. I provide some extra fields, like disassembly of the machine code, the corresponding CompiledMethod, and the method's selector. I use proxies where appropriate.

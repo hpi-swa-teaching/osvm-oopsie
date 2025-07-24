@@ -1,1 +1,1 @@
-THIS CLASS HAS A COMMENT!
+I am an InstructionPrinter that also displays a readable version of the method's sendAndBranchData (see the explaining comment in CompiledCode's implementation).
