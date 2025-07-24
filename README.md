@@ -10,12 +10,20 @@ This project was initially developed in the context of a Master's Project @ [hpi
 
 1. Clone the OSVM repo and follow the instructions in their readme to build a VMMaker image and a spurreader image
 2. Install dependencies:
-   - https://github.com/LinqLover/SimulationStudio
-   - https://github.com/LinqLover/yaros/ (optional)
-3. Install [git-s](https://github.com/hpi-swa/git-s)
+   - https://github.com/LinqLover/SimulationStudio (required)
+   - Peer dependencies *(optional)*:
+		- Our fork of Scorch (see below) *(optional, but highly recommended)*
+		- https://github.com/LinqLover/yaros/
+		- https://github.com/LeonMatthes/Autocompletion
+	
+	  If you choose not to load any of the peer dependencies, in step 4, you can ignore the warnings about missing classes.
+3. Install [git-s](https://github.com/hpi-swa/git-s) *(at the time of writing, we recommend the `main` branch instead of `latest-release`)*
 4. In Git-S, clone and check out this repository
 
-For Scorch, also clone [our fork](https://github.com/MariusDoe/Scorch) and check out the `squeak` branch via Git-S.
+For Scorch, clone [our fork](https://github.com/MariusDoe/Scorch) and check out the `squeak` branch via Git-S.  
+You can **ignore** all dependcy warnings on missing classes but comment out the reference to `SOValidator` instead after loading.
+
+For colored byte codes in inspectors, you can also load all patches for **instruction printing** referenced in [UPSTREAM.md](./UPSTREAM.md).
 
 ## Usage
 
@@ -76,7 +84,7 @@ cos openAsMorph.
 When the VM is up, send it a do-it like the following:
 
 ```smalltalk
-30 benchFib
+30 benchFib!
 ```
 
 And step through the breakpoints and cross fingers that it works!
@@ -86,7 +94,7 @@ Of course, you may test more complex code, like JSON parsing (`[JsonTests suite 
 If you load the [AWFY benchmark suite](https://github.com/smarr/are-we-fast-yet/tree/master/benchmarks/Smalltalk) into the reader image, you can also try to run them like this:
 
 ```smalltalk
-Json new benchmark
+Json new benchmark!
 ```
 
 ### Running Benchmarks
@@ -94,7 +102,7 @@ Json new benchmark
 Build the production VM for Sista via the Source Generation Workspace and `mvm`. Prepare an image (e.g., the spurreader image) by loading Scorch and the [AWFY benchmark suite](https://github.com/smarr/are-we-fast-yet/tree/master/benchmarks/Smalltalk) into it, run it in the production VM, and then run your benchmarks like this:
 
 ```smalltalk
-[100000 timesRepeat: [(JsonParser with: '"Carpe Squeak"') read; readStringInternal]] timeToRunWithoutGC
+[100000 timesRepeat: [(JsonParser with: '"Carpe Squeak"') read; readStringInternal]] timeToRunWithoutGC!
 ```
 
 See also `Scorch class>>#exampleBenchmark` for comparing the benchmark results of Cog and Sista via OSProcess:
