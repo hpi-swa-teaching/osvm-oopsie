@@ -1,4 +1,4 @@
-as yet unclassified
+fields
 fieldMethod
 	^ (self newFieldForType: #misc key: #method)
 		name: 'method' translated; emphasizeName;

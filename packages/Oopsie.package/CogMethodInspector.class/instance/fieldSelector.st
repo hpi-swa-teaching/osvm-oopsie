@@ -1,4 +1,4 @@
-as yet unclassified
+fields
 fieldSelector
 	^ (self newFieldForType: #misc key: #selector)
 		name: 'selector' translated; emphasizeName;

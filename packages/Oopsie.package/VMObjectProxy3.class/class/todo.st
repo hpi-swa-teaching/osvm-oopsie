@@ -1,4 +1,4 @@
-as yet unclassified
+documentation - todo
 todo
 	"This is a prototype! Conceptually we have the following open end:
 	* Fix deoptimization of Scorch via Context proxies. We should ensure that Scorch always uses Context class proxies instead of plain Context, but apparently this approach does not yet work. See comment in SoDecompiler>>#recordSunkContext:.
