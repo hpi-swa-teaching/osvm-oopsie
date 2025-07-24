@@ -27,16 +27,17 @@ rangesIn: aText
 			do: [:ea |
 				| bodyLine |
 				bodyLine := ea asString.
-				(bodyLine prefixMatchesRegex: '[0-9a-f]{8}\: (?=\S)') ifTrue:
+				(bodyLine prefixMatchesRegex: '[0-9a-f]{6,8}\: (?=\S)') ifTrue:
 					[| newDelta |
-					newDelta := 10.
+					newDelta := bodyLine indexOf: $ .
 					deltas add: {stream position. delta := delta + newDelta. #_addressAnnotation}.
 					bodyLine := bodyLine allButFirst: newDelta].
-				(bodyLine matchesRegex: '.* \: ([0-9A-F]{2} )+$') ifTrue:
-					[| i |
+				(bodyLine matchesRegex: '.* \: ([0-9A-F]{2} )+(;.*)?$') ifTrue:
+					[| i j |
 					i := (bodyLine lastIndexOf: $:) - 1.
-					deltas add: {stream position + i. delta := delta + (bodyLine allButFirst: i) size. #_bytesAnnotation}.
-					bodyLine := bodyLine first: i].
+					j := ((bodyLine allButFirst: i) indexOf: $; ifAbsent: [(bodyLine allButFirst: i) size + 1]) - 1.
+					deltas add: {stream position + i. delta := delta + j. #_bytesAnnotation}.
+					bodyLine := (bodyLine first: i) , ((bodyLine allButFirst: i) allButFirst: j) ].
 				stream nextPutAll: bodyLine]
 			separatedBy: [stream cr]].
 	
