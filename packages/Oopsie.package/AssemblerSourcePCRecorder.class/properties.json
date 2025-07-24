@@ -1,0 +1,16 @@
+{
+	"category" : "Oopsie-upstream:MethodMassage-MethodMassage-Tools",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"assemblerMethod",
+		"lastAbstractPC",
+		"abstractPCToSourcePCMaps" ],
+	"name" : "AssemblerSourcePCRecorder",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

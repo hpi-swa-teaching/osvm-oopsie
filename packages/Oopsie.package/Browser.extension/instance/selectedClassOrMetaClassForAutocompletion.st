@@ -1,0 +1,4 @@
+*Oopsie-upstream:MethodMassage-*MethodMassageExtras-Tools-Autocompletion-*Autocompletion-override
+selectedClassOrMetaClassForAutocompletion
+
+	^ AssemblerMethod

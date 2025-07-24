@@ -1,0 +1,20 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"aboutToStyle:" : "ct 7/24/2025 01:00",
+		"bytecodeModeChanged" : "ct 6/17/2025 11:59",
+		"contents" : "ct 6/17/2025 10:49",
+		"contentsSymbolQuints" : "ct 6/17/2025 10:46",
+		"contextStackIndex:oldContextWas:" : "ct 7/24/2025 04:16",
+		"customButtonSpecs" : "ct 6/17/2025 12:00",
+		"debuggerMap" : "ct 6/17/2025 11:09",
+		"guessTypeForName:" : "ct 6/17/2025 10:54",
+		"mainContextStackMenu:" : "ct 6/17/2025 12:00",
+		"pcRange" : "ct 6/17/2025 11:05",
+		"pcRangeForByteCode:" : "ct 7/20/2025 01:57",
+		"selectedAssembler" : "ct 6/17/2025 15:47",
+		"showAssembler:" : "ct 6/17/2025 15:44",
+		"showingAnyByteCodes" : "ct 6/17/2025 12:00",
+		"simulateStep" : "ct 6/25/2025 23:27",
+		"stepToStatement" : "ct 6/17/2025 12:00" } }

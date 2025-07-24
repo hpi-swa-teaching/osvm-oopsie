@@ -2,4 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
+		"acceptBlock" : "ct 7/24/2025 02:30",
+		"acceptBlock:" : "ct 7/24/2025 01:25",
+		"acceptContents:for:notifying:" : "ct 7/24/2025 01:53",
+		"hasAcceptBlock" : "ct 7/24/2025 01:16",
 		"name:" : "ct 6/8/2025 20:34" } }

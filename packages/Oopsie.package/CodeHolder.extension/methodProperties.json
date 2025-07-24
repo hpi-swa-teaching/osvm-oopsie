@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"removeEditContentsSymbolFor:" : "ct 6/16/2025 20:53" },
+	"instance" : {
+		"aboutToStyle:" : "ct 7/24/2025 03:10",
+		"aboutToStyleAssembler:" : "ct 6/17/2025 11:02",
+		"acceptAssembler:notifying:" : "ct 7/24/2025 01:31",
+		"contents" : "ct 7/24/2025 03:09",
+		"contents:notifying:" : "ct 7/24/2025 03:12",
+		"modelClassForAutocompletion" : "ct 6/16/2025 22:43",
+		"okayToAccept" : "ct 6/16/2025 21:29",
+		"selectedAssembler" : "ct 6/17/2025 10:51",
+		"showAssembler:" : "ct 6/16/2025 20:49",
+		"showByteCodes:" : "ct 6/10/2025 20:48",
+		"showingAssembler" : "ct 6/16/2025 20:48",
+		"showingAssemblerString" : "ct 6/16/2025 20:48",
+		"toggleAssembler" : "ct 6/16/2025 20:49" } }

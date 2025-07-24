@@ -1,0 +1,4 @@
+action
+theClass
+
+	^ AssemblerMethod

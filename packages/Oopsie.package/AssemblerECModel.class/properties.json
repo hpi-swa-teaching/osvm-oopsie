@@ -1,0 +1,14 @@
+{
+	"category" : "Oopsie-upstream:MethodMassage-MethodMassageExtras-Tools-Autocompletion",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "AssemblerECModel",
+	"pools" : [
+		 ],
+	"super" : "ECModel",
+	"type" : "normal" }

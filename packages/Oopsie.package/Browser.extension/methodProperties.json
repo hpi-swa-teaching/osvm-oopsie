@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"aboutToStyle:" : "ct 7/24/2025 00:22",
+		"aboutToStyleAssembler:" : "ct 6/18/2025 22:17",
+		"acceptAssembler:notifying:" : "ct 7/24/2025 01:35",
+		"contents" : "ct 6/16/2025 21:20",
+		"contents:notifying:" : "ct 6/16/2025 21:29",
+		"createCompletionController" : "ct 7/24/2025 02:57",
+		"newAssemblerMethod" : "ct 6/16/2025 21:52",
+		"newAssemblerMethodTemplate" : "ct 6/16/2025 21:25",
+		"newMessageTemplate" : "ct 6/16/2025 21:20",
+		"selectedClassOrMetaClassForAutocompletion" : "ct 6/16/2025 22:10",
+		"theNewAssemblerMethod" : "ct 6/16/2025 21:26" } }

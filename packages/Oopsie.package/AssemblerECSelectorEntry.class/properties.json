@@ -1,0 +1,14 @@
+{
+	"category" : "Oopsie-upstream:MethodMassage-MethodMassageExtras-Tools-Autocompletion",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "AssemblerECSelectorEntry",
+	"pools" : [
+		 ],
+	"super" : "ECSelectorEntry",
+	"type" : "normal" }
