@@ -9,10 +9,10 @@ acceptAssembler: aStringOrText notifying: requestor
 	assemblerMethod ifNil: [^ false].
 	
 	"proxy compliant"
-	assemblerMethod
+	"assemblerMethod
 		methodClass: (self environment classNamed: (assemblerMethod methodClass name asSymbolLike: self selectedClass name));
 		compiledMethodClass: (self environment classNamed: (#CompiledMethod asSymbolLike: self selectedClass name));
-		selector: (assemblerMethod selector asSymbolLike: self selectedClass name).
+		selector: (assemblerMethod selector asSymbolLike: self selectedClass name)."
 	
 	method := assemblerMethod assemble.
 	method propertyValueAt: #assemblerSource put: aStringOrText.
