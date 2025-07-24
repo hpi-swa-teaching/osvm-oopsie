@@ -1,4 +1,4 @@
-as yet unclassified
+documentation - todo
 todoMoveUpstream
 	"
 	self todoMoveUpstream
@@ -8,6 +8,7 @@ todoMoveUpstream
 	- symbolicTextWithSendAndBranchData/InstructionPrinterWithSendAndBranchData
 	- faster transcript (VMDeferredFlushTranscriptStream)
 	- DecoratedAssemblerStyler/YarosX86AsmStyler
+	- AssemblerBrowser (see upstream:MethodMassage and implementations of #todoMoveUpstream there)
 	
 	Overview of external depencies:
 	- Required:
@@ -26,5 +27,5 @@ todoMoveUpstream
 					select: [:ea | ea category includesSubstring: 'upstream']))
 						withoutDuplicates
 							copyWithout: thisContext method asCodeReference)
-								, (self packageInfo classes select: [:ea | ea category includesSubstring: 'upstream'] thenCollect: [:ea | ea asCodeReference])
+								, (self packageInfo classes select: [:ea | ea category includesSubstring: 'upstream'] thenCollect: [:ea | MethodReference class: ea selector: #Definition])
 		name: 'Upstream methods of Oopsie'

@@ -1,0 +1,16 @@
+{
+	"category" : "Oopsie-upstream:MethodMassage-MethodMassageExtras-Tools-Autocompletion",
+	"classinstvars" : [
+		 ],
+	"classtraitcomposition" : "TAssemblerECController classTrait",
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "AssemblerECController",
+	"pools" : [
+		 ],
+	"super" : "ECController",
+	"traitcomposition" : "TAssemblerECController",
+	"type" : "normal" }

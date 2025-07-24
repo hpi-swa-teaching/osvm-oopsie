@@ -1,4 +1,4 @@
-as yet unclassified
+fields - streaming
 streamBaseFieldsOn: aStream
 
 	super streamBaseFieldsOn: aStream.

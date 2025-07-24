@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"todoMoveUpstream" : "ct 7/24/2025 03:59" },
+	"instance" : {
+		"alternativeDescriptionClass" : "ct 6/16/2025 23:05",
+		"initializeSelectors" : "ct 6/16/2025 22:38",
+		"initializeSelectorsFor:" : "ct 6/16/2025 23:06",
+		"narrowWith:" : "ct 6/16/2025 22:38",
+		"preferedDescriptionClass" : "ct 6/16/2025 23:03",
+		"resetSelectors" : "ct 6/16/2025 22:38",
+		"theClass" : "ct 6/16/2025 22:53" } }

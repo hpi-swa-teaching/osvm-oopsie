@@ -2,6 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
+		"assemblerEditDebuggerMap" : "ct 6/17/2025 11:10",
+		"assemblerString" : "eem 4/6/2015 11:35",
+		"disassemble" : "eem 3/15/2013 13:16",
+		"inspectorFieldAssemblerFor:" : "ct 7/24/2025 04:23",
 		"longPrintWithSendAndBranchDataOn:" : "ct 5/16/2025 23:58",
 		"longPrintWithSendAndBranchDataOn:indent:" : "ct 5/26/2025 00:13",
 		"symbolicTextWithSendAndBranchData" : "ct 7/16/2025 22:09",

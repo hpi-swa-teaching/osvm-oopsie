@@ -1,0 +1,14 @@
+{
+	"category" : "Oopsie-upstream:MethodMassage-MethodMassage-Tools",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"assemblerMethod" ],
+	"name" : "AssemblerDebuggerMethodMap",
+	"pools" : [
+		 ],
+	"super" : "DebuggerMethodMap",
+	"type" : "normal" }

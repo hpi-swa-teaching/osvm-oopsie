@@ -1,4 +1,4 @@
-as yet unclassified
+fields
 fieldDisassembly
 	^ (self newFieldForType: #misc key: #disassembly)
 		name: 'disassembly' translated; emphasizeName;

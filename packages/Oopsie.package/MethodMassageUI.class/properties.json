@@ -1,0 +1,14 @@
+{
+	"category" : "Oopsie-upstream:MethodMassage-MethodMassage-Tools",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "MethodMassageUI",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
