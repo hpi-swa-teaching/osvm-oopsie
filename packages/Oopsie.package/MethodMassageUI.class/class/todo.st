@@ -1,6 +1,7 @@
 as yet unclassified
 todo
 	"
+	* Reconsider UI name 'assembler'
 	* Refactor and upstream all my overrides on CodeHolder & Co. (see todoMoveUpstream)
 	* Future work: Somehow support do-its with MethodMassage DSL in debugger?
 	* Make possible to use with Oopsie:

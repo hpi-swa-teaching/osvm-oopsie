@@ -8,6 +8,7 @@ todoMoveUpstream
 	- symbolicTextWithSendAndBranchData/InstructionPrinterWithSendAndBranchData
 	- faster transcript (VMDeferredFlushTranscriptStream)
 	- DecoratedAssemblerStyler/YarosX86AsmStyler
+	- AssemblerBrowser (see upstream:MethodMassage and implementations of #todoMoveUpstream there)
 	
 	Overview of external depencies:
 	- Required:
