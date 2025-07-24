@@ -7,10 +7,11 @@
 		"ceSistaTrap" : "mad 7/10/2025 18:01",
 		"detectOrLoadPlugin:" : "mad 6/12/2025 13:17",
 		"handleTrapInHost:withArgs:" : "ct 7/17/2025 01:53",
+		"initialStdinContents" : "mad 7/24/2025 18:31",
 		"ioLoadFunction:From:" : "ct 6/27/2025 01:04",
 		"openAsMorph" : "mad 6/3/2025 15:35",
 		"pluginList" : "mad 5/22/2025 13:27",
 		"respondToSistaTrap" : "mad 7/10/2025 18:00",
-		"sendInputToStdin" : "mad 5/22/2025 16:47",
+		"sendInputToStdin" : "mad 7/24/2025 18:24",
 		"sendInputToStdin:" : "mad 6/12/2025 13:18",
 		"utilitiesMenu:" : "mad 7/19/2025 15:56" } }
