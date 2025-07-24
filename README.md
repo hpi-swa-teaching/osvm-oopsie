@@ -24,7 +24,7 @@ For Scorch, also clone [our fork](https://github.com/MariusDoe/Scorch) and check
 Start a Sista/Cog VM in the simulator through the Simulation Workspace. Once it is running, send it a do-it like one of these:
 
 ```smalltalk
-RectangleMorph new tryPrimitive: 114 withArgs: #()!
+World firstSubmorph tryPrimitive: 114 withArgs: #()!
 (Integer>>#benchFib) tryPrimitive: 114 withArgs: #()!
 thisContext tryPrimitive: 114 withArgs: #()!
 ```
@@ -35,7 +35,7 @@ In the resulting debugger, do this:
 self inspectOop: self stackTop.
 ```
 
-Or for the `Context`, even (currently read-only!):
+Or for the `Context`, even (experimental, currently read-only!):
 
 ```smalltalk
 (self proxyForOop: self stackTop) oopsieUnsimulatedPerform: #debug.
@@ -73,7 +73,7 @@ cos openAsMorph.
 [cos run] forkAt: 20
 ```
 
-When the VM is up, send it the following do-it:
+When the VM is up, send it a do-it like the following:
 
 ```smalltalk
 30 benchFib
@@ -82,6 +82,28 @@ When the VM is up, send it the following do-it:
 And step through the breakpoints and cross fingers that it works!
 
 Of course, you may test more complex code, like JSON parsing (`[JsonTests suite debug] benchFor: 0.5 seconds`), but at the current time, you will quickly run into open bugs of Sista/Scorch <sub><sup>(or of our context proxy)</sup></sub>. However, with Oopsie, you will find it easier to debug and fix them than ever before!
+
+If you load the [AWFY benchmark suite](https://github.com/smarr/are-we-fast-yet/tree/master/benchmarks/Smalltalk) into the reader image, you can also try to run them like this:
+
+```smalltalk
+Json new benchmark
+```
+
+### Running Benchmarks
+
+Build the production VM for Sista via the Source Generation Workspace and `mvm`. Prepare an image (e.g., the spurreader image) by loading Scorch and the [AWFY benchmark suite](https://github.com/smarr/are-we-fast-yet/tree/master/benchmarks/Smalltalk) into it, run it in the production VM, and then run your benchmarks like this:
+
+```smalltalk
+[100000 timesRepeat: [(JsonParser with: '"Carpe Squeak"') read; readStringInternal]] timeToRunWithoutGC
+```
+
+See also `Scorch class>>#exampleBenchmark` for comparing the benchmark results of Cog and Sista via OSProcess:
+
+![Comparing Json string parsing for Cog and Sista (with Scorch).](./screenshots/vmstats.png)
+
+## Road Ahead
+
+With the Oopsie proxy framework, we have made it possible to test, debug, and develop Sista/Scorch effectively by running it the simulator. Sista/Scorch themselves are still in an early stage, contain an unknown number of bugs, and have the potential for plenty more optimizations and unsafe bytecodes. We have documented the open todos of Oopsie in `VMObjectProxy3 class>>#todo`. Notably, Sista traps (for Scorch deoptimization) are not yet supported in simulation as explained in this comment.
 
 ## Upstream Changes
 
