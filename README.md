@@ -116,3 +116,43 @@ With the Oopsie proxy framework, we have made it possible to test, debug, and de
 ## Upstream Changes
 
 This repository also contains a number of rather unrelated changes to the OpenSmalltalk-VM simulator, such as a faster transcript and syntax highlighting for disassembled JIT code. On the other hand, we already contributed back some of our changes to the upstream repositories, many of which are still pending review. You can find a full overview of all of them in [UPSTREAM.md](./UPSTREAM.md).
+
+## Bonus: Using Oopsie To Visualize and Explore the Object Memory
+
+Do it in the simulator:
+
+```smalltalk
+self systemNavigation tryPrimitive: 114 withArgs: #()!
+```
+
+In the resulting debugger, do `self inspectOop: self stackTop`, then on the proxy:
+
+```smalltalk
+| colorTable colors form container |
+sample := self allObjects first: 10000.
+
+Random seed: 123.
+colorTable := Dictionary new.
+colors := Array new: sample size.
+1 to: sample size do: [:index |
+	colors at: index put:
+		(colorTable
+			at: ((sample at: index) ifNotNil: [:x | x vmObjectClass])
+			ifAbsentPut: [Color random])].
+container := Morph new extent: sample size sqrt ceiling asInteger asPoint.
+colors withIndexDo: [:color :index |
+	container addMorph:
+		(Morph new
+			position: (index // container width) @ (index \\ container width);
+			color: color;
+			setProperty: #theObject toValue: (sample at: index);
+			on: #mouseDown send: #value to: [ToolSet inspect: (sample at: index)];
+			balloonText: ((sample at: index) ifNotNil: [:x | x vmObjectClass]) printString;
+			yourself)].
+container openAsMorph.
+```
+
+This will give you an interactive visualization of the first 10,000 objects in the object memory and their classes:
+
+![Result](./screenshots/objectMemoryVisualization.png)
+
