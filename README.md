@@ -152,7 +152,7 @@ colors withIndexDo: [:color :index |
 container openAsMorph.
 ```
 
-This will give you an interactive visualization of the first 10,000 objects in the object memory and their classes:
+This will give you an interactive visualization of the first 10,000 objects in the object memory and their classes (inspired by <https://github.com/hpi-swa-lab/cloud-squeak/blob/main/mini-squeak/index.md#4-analyze-mini-image-directly>). Click or hover on any pixel to inspect it:
 
 ![Result](./screenshots/objectMemoryVisualization.png)
 
