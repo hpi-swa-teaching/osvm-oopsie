@@ -20,7 +20,7 @@ This project was initially developed in the context of a Master's Project @ [hpi
 3. Install [git-s](https://github.com/hpi-swa/git-s) *(at the time of writing, we recommend the `main` branch instead of `latest-release`)*
 4. In Git-S, clone and check out this repository
 
-For Scorch, clone [our fork](https://github.com/MariusDoe/Scorch) and check out the `squeak` branch via Git-S.  
+For Scorch, clone [our fork](https://github.com/MariusDoe/Scorch/tree/squeak) and check out the `squeak` branch via Git-S.  
 You can **ignore** all dependcy warnings on missing classes but comment out the reference to `SOValidator` instead after loading.
 
 For colored byte codes in inspectors, you can also load all patches for **instruction printing** referenced in [UPSTREAM.md](./UPSTREAM.md).
