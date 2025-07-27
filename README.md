@@ -13,7 +13,7 @@ This project was initially developed in the context of a Master's Project @ [hpi
    - https://github.com/LinqLover/SimulationStudio (required)
    - Peer dependencies *(optional)*:
 		- Our fork of Scorch (see below) *(optional, but highly recommended)*
-		- https://github.com/LinqLover/yaros/
+		- https://github.com/LinqLover/yaros/ (install with `load: #js`)
 		- https://github.com/LeonMatthes/Autocompletion
 	
 	  If you choose not to load any of the peer dependencies, in step 4, you can ignore the warnings about missing classes.
