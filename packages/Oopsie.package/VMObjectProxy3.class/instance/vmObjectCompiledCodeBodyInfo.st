@@ -39,4 +39,4 @@ vmObjectCompiledCodeBodyInfo
 			withAttributes: commentAttributes do:
 				[stream nextPutAll: '"bytecodes"'];
 			cr.
-		stream nextPutAll: (self oopsieUnsimulatedPerform: #symbolicText)]
+		stream nextPutAll: (self oopsieUnsimulatedPerform: #symbolicTextWithSendAndBranchData)]
