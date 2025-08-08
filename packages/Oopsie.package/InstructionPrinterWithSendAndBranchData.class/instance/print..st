@@ -3,7 +3,7 @@ print: instruction
 
 	| data |
 	self flag: #compatibility. "Remove this method once InstructionPrinter with style has been merged!"
-	(self respondsTo: #print:withArguments:comment:) ifTrue: [^ super print: instruction].
+	(self class superclass canUnderstand: #print:withArguments:comment:) ifTrue: [^ super print: instruction].
 	
 	data := self dataFor: oldPC.
 	super print: instruction.
