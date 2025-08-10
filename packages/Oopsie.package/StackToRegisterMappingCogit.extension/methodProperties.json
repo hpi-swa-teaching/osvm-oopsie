@@ -1,6 +1,7 @@
 {
 	"class" : {
-		"initializeBytecodeTableForSistaV1" : "mad 6/12/2025 16:41" },
+		"initializeBytecodeTableForSistaV1" : "mad 8/9/2025 22:30" },
 	"instance" : {
 		"genBranchOnBehaviorLiteral" : "mad 7/19/2025 18:32",
+		"genPushRemoteInstVar:inObjectAt:" : "mad 8/9/2025 19:31",
 		"v4:Branch:On:BehaviorLiteralDistance:" : "mad 7/19/2025 18:35" } }

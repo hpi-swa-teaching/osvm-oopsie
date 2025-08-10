@@ -1,9 +1,7 @@
 *Oopsie-upstream:VMMaker-class initialization-override
 initializeBytecodeTableForSistaV1
-	"StackToRegisterMappingCogit initializeBytecodeTableForSistaV1"
+	"SimpleStackBasedCogit initializeBytecodeTableForSistaV1"
 
-	numPushNilsFunction := #sistaV1:Num:Push:Nils:.
-	pushNilSizeFunction := #sistaV1PushNilSize:numInitialNils:.
 	BytecodeSetHasDirectedSuperSend := true.
 	FirstSpecialSelector := 96.
 	NumSpecialSelectors := 32.
@@ -17,18 +15,18 @@ initializeBytecodeTableForSistaV1
 	self generatorTableFrom: #(
 		"1 byte bytecodes"
 		"pushes"
-		(1    0   15 genPushReceiverVariableBytecode isInstVarRef		needsFrameNever: 1)
-		(1  16   31 genPushLiteralVariable16CasesBytecode			needsFrameNever: 1)
-		(1  32   63 genPushLiteralConstantBytecode					needsFrameNever: 1)
-		(1  64   75 genPushTemporaryVariableBytecode				needsFrameIfMod16GENumArgs: 1)
-		(1  76   76 genPushReceiverBytecode							needsFrameNever: 1)
-		(1  77   77 genPushConstantTrueBytecode						needsFrameNever: 1)
-		(1  78   78 genPushConstantFalseBytecode					needsFrameNever: 1)
-		(1  79   79 genPushConstantNilBytecode						needsFrameNever: 1)
-		(1  80   80 genPushConstantZeroBytecode						needsFrameNever: 1)
-		(1  81   81 genPushConstantOneBytecode						needsFrameNever: 1)
+		(1    0   15 genPushReceiverVariableBytecode isInstVarRef)
+		(1  16   31 genPushLiteralVariable16CasesBytecode	needsFrameNever: 1)
+		(1  32   63 genPushLiteralConstantBytecode			needsFrameNever: 1)
+		(1  64   75 genPushTemporaryVariableBytecode)
+		(1  76   76 genPushReceiverBytecode)
+		(1  77   77 genPushConstantTrueBytecode				needsFrameNever: 1)
+		(1  78   78 genPushConstantFalseBytecode			needsFrameNever: 1)
+		(1  79   79 genPushConstantNilBytecode				needsFrameNever: 1)
+		(1  80   80 genPushConstantZeroBytecode				needsFrameNever: 1)
+		(1  81   81 genPushConstantOneBytecode				needsFrameNever: 1)
 		(1  82   82 genExtPushPseudoVariable)
-		(1  83   83 duplicateTopBytecode								needsFrameNever: 1)
+		(1  83   83 duplicateTopBytecode						needsFrameNever: 1)
 
 		(1  84   87 unknownBytecode)
 
@@ -43,20 +41,9 @@ initializeBytecodeTableForSistaV1
 		(1  95   95 genExtNopBytecode			needsFrameNever: 0)
 
 		"sends"
-		(1  96   96 genSpecialSelectorArithmetic isMapped AddRR)
-		(1  97   97 genSpecialSelectorArithmetic isMapped SubRR)
-		(1  98   98 genSpecialSelectorComparison isMapped JumpLess)
-		(1  99   99 genSpecialSelectorComparison isMapped JumpGreater)
-		(1 100 100 genSpecialSelectorComparison isMapped JumpLessOrEqual)
-		(1 101 101 genSpecialSelectorComparison isMapped JumpGreaterOrEqual)
-		(1 102 102 genSpecialSelectorComparison isMapped JumpZero)
-		(1 103 103 genSpecialSelectorComparison isMapped JumpNonZero)
-		(1 104 109 genSpecialSelectorSend isMapped)	 " #* #/ #\\ #@ #bitShift: //"
-		(1 110 110 genSpecialSelectorArithmetic isMapped AndRR)
-		(1 111 111 genSpecialSelectorArithmetic isMapped OrRR)
-		(1 112 117 genSpecialSelectorSend isMapped) "#at: #at:put: #size #next #nextPut: #atEnd"
+		(1   96 117 genSpecialSelectorSend isMapped) "#+ #- #< #> #<= #>= #= #~= #* #/ #\\ #@ #bitShift: #// #bitAnd: #bitOr: #at: #at:put: #size #next #nextPut: #atEnd"
 		(1 118 118 genSpecialSelectorEqualsEquals needsFrameNever: notMapped -1) "not mapped because it is directly inlined (for now)"
-		(1 119 119 genSpecialSelectorClass needsFrameIfStackGreaterThanOne: notMapped 0) "not mapped because it is directly inlined (for now)"
+		(1 119 119 genSpecialSelectorClass needsFrameNever: notMapped 0) "not mapped because it is directly inlined (for now)"
 		(1 120 120 genSpecialSelectorNotEqualsEquals needsFrameNever: notMapped -1) "not mapped because it is directly inlined (for now)"
 		(1 121 127 genSpecialSelectorSend isMapped) "#value #value: #do: #new #new: #x #y"
 
@@ -70,8 +57,9 @@ initializeBytecodeTableForSistaV1
 													v3:ShortForward:Branch:Distance:)
 		(1 192 199 genShortJumpIfFalse			branch isBranchFalse isMapped "because of mustBeBoolean"
 													v3:ShortForward:Branch:Distance:)
-		(1 200 207 genStoreAndPopReceiverVariableBytecode isInstVarRef is1ByteInstVarStore isMappedIfImmutability needsFrameIfImmutability: -1)
-		
+
+		"stores"
+		(1 200 207 genStoreAndPopReceiverVariableBytecode isInstVarRef isMappedIfImmutability needsFrameIfImmutability: -1)
 		(1 208 215 genStoreAndPopTemporaryVariableBytecode)
 
 		(1 216 216 genPopStackBytecode needsFrameNever: -1)
@@ -86,7 +74,7 @@ initializeBytecodeTableForSistaV1
 
 		"pushes"
 		(2 226 226 genExtPushReceiverVariableBytecode isInstVarRef)		"Needs a frame for context inst var access"
-		(2 227 227 genExtPushLiteralVariableBytecode			needsFrameNever: 1)
+		(2 227 227 genExtPushLiteralVariableBytecode		needsFrameNever: 1)
 		(2 228 228 genExtPushLiteralBytecode					needsFrameNever: 1)
 		(2 229 229 genLongPushTemporaryVariableBytecode)
 		(2 230 230 unknownBytecode)
@@ -100,7 +88,7 @@ initializeBytecodeTableForSistaV1
 		(2 235 235 genExtSendSuperBytecode isMapped)
 
 		"sista bytecodes"
-		(2 236 236 genCallMappedInlinedPrimitive isMapped hasUnsafeJump)
+		(2 236 236 unknownBytecode)
 
 		"jumps"
 		(2 237 237 genExtUnconditionalJump	branch isMapped "because of interrupt check" v4:Long:Branch:Distance:)
@@ -118,12 +106,11 @@ initializeBytecodeTableForSistaV1
 		(2 246 247	unknownBytecode)
 
 		"3 byte bytecodes"
-		(3 248 248 genCallPrimitiveBytecode hasUnsafeJump)
-		(3 249 249 genExtPushFullClosureBytecode)
+		(3 248 248 genCallPrimitiveBytecode)
+		(3 249 249 genExtPushFullClosureBytecode) 
 		(3 250 250 genExtPushClosureBytecode block v4:Block:Code:Size:)
 		(3 251 251 genExtPushRemoteTempOrInstVarLongBytecode)
 		(3 252 252 genExtStoreRemoteTempOrInstVarLongBytecode isMappedIfImmutability)
 		(3 253 253 genExtStoreAndPopRemoteTempOrInstVarLongBytecode isMappedIfImmutability)
-		(3 254 254 genBranchOnBehaviorLiteral branch v4:Branch:On:BehaviorLiteralDistance:)
-		
-		(3 255 255	unknownBytecode))
+
+		(3 254 255	unknownBytecode))
