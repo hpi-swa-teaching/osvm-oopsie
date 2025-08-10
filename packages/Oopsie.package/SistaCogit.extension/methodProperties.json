@@ -2,4 +2,5 @@
 	"class" : {
 		 },
 	"instance" : {
+		"genEnsureEnoughSlots" : "mad 8/9/2025 18:19",
 		"genUnarySizeInlinePrimitive:" : "mad 7/20/2025 13:53" } }
