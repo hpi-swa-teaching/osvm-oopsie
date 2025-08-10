@@ -127,6 +127,7 @@ initializeCTranslationDictionary
 	#noMask:					#generateNoMask:on:indent:
 	#raisedTo:					#generateRaisedTo:on:indent:
 	#touch:					#generateTouch:on:indent:
+	#remapOop:in:			#generateRemapOopIn:on:indent:
 
 	#bytesPerOop 				#generateBytesPerOop:on:indent:
 	#bytesPerWord 			#generateBytesPerWord:on:indent:
