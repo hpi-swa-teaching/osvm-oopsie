@@ -6,7 +6,7 @@ printOn: aStream
 		nextPutAll: self vmOop storeStringHex;
 		nextPutAll: ': '.
 	
-	self isContext
+	(self isContext or: [self isCompiledMethod])
 		ifTrue:
 			[[self doesNotUnderstand: (Message selector: #printOn: argument: aStream)]
 				ifError: [:error | aStream nextPutAll: '<error: '; nextPutAll: '>']]
