@@ -80,10 +80,13 @@ initializationOptionNames
 	#desiredCogCodeSize				optional	Integer				if set, overrides the default cog code size (mimics command-line setting in real VM)
 	#desiredEdenBytes				optional	Integer				if set, overrides the default eden size (mimics command-line setting in real VM)
 	#desiredNumStackPages			optional	Integer				if set, overrides the default number of stack zone pages (mimics command-line setting in real VM)
+	#sistaSimulatedSelectorCounterTripped	optional	Symbol		If set, delegates counter trips in a Sista VM to the host image by sending the symbol to an Oopsie proxy on the oop of the counter-tripping context. The simulated VM can still control whether counter trips should be handled by setting Smalltalk specialObjectsArray at: 59 to nil.
+	#sistaSimulatedSelectorTrap			optional		Symbol		If set, delegates traps in a Sista VM to the host image by sending the symbol to an Oopsie proxy on the oop of the trapping context.
 
 	Simulation/In-Image Compilation Break Pointing
 	#haltOnExecuteMethod			optional	Boolean	true	if true the VM will break in primitiveExecuteMethod[ArgsArray]
 	#haltOnFileDelete					optional	Boolean	true	if true the FilePlugin will break before deleting any file
+	#haltOnCounterTripped			optional	Boolean|true	if true the VM will break in ceCounterTripped:
 	#linkedSendTrace					optional	Integer				sets the Cogit's trace flags (mimics command-line setting in real VM)
 	#recordPrimTrace					optional	Boolean	true	sets the trace primitive calls bit in the Cogit's trace flags
 	#relativeAddressDisassembly		optional	Boolean	false	disassembles machine code using relative addresses

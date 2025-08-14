@@ -71,7 +71,9 @@ cos := CogVMSimulator newWithOptions:
 	ObjectMemory Spur64BitCoMemoryManager
 	MULTIPLEBYTECODESETS true
 	bytecodeTableInitializer initializeBytecodeTableForSqueakV3PlusClosuresSistaV1Hybrid
-	ISA X64).
+	ISA X64
+	sistaSimulatedSelectorCounterTripped conditionalBranchCounterTrippedOn:
+	sistaSimulatedSelectorTrap trapTrippedFromSimulation).
 cos desiredNumStackPages: 8.
 
 SoDependencyMap cleanUp. "workaround for identity-full proxies"
