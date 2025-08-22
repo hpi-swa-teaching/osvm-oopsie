@@ -21,7 +21,7 @@ This project was initially developed in the context of a Master's Project @ [hpi
 4. In Git-S, clone and check out this repository
 
 For Scorch, clone [our fork](https://github.com/MariusDoe/Scorch/tree/squeak) and check out the `squeak` branch via Git-S.  
-You can **ignore** all dependcy warnings on missing classes but comment out the reference to `SOValidator` instead after loading.
+You can **ignore** all dependency warnings on missing classes but comment out the reference to `SOValidator` instead after loading.
 
 For colored byte codes in inspectors, you can also load all patches for **instruction printing** referenced in [UPSTREAM.md](./UPSTREAM.md).
 
@@ -156,7 +156,7 @@ colors withIndexDo: [:color :index |
 container openAsMorph.
 ```
 
-This will give you an interactive visualization of the first 10,000 objects in the object memory and their classes (inspired by <https://github.com/hpi-swa-lab/cloud-squeak/blob/main/mini-squeak/index.md#4-analyze-mini-image-directly>). Click or hover on any pixel to inspect it:
+This will give you an interactive visualization of the first 10,000 objects in the object memory and their classes (inspired by <https://github.com/hpi-swa-lab/cloud-squeak/blob/main/mini-squeak/index.md#4-analyze-mini-image-directly>). Thanks to Jens Lincke ([JensLincke](https://github.com/JensLincke)) for the idea! Click or hover on any pixel to inspect it.
 
 ![Result](./screenshots/objectMemoryVisualization.png)
 
