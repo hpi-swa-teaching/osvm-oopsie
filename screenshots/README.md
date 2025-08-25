@@ -21,7 +21,7 @@
 
 This screencast shows how our proxy inspector can be used to inspect a morph from a simulated VM:
 
-https://github.com/user-attachments/assets/0e337119-23ae-485f-9135-800728d574bb
+<video src="https://github.com/user-attachments/assets/0e337119-23ae-485f-9135-800728d574bb" controls alt="inspector-on-morph-proxy.mp4">https://github.com/user-attachments/assets/0e337119-23ae-485f-9135-800728d574bb</video>
 
 ---
 
@@ -62,7 +62,7 @@ https://github.com/user-attachments/assets/0e337119-23ae-485f-9135-800728d574bb
 
 This screencast shows how Scorch is triggered by a counter trip and how to use our extended inspectors with code artifacts:
 
-https://github.com/user-attachments/assets/fbd7c012-9fb8-418e-be92-4c20b5f77cc3
+<video src="https://github.com/user-attachments/assets/fbd7c012-9fb8-418e-be92-4c20b5f77cc3" controls alt="benchFib.mp4">https://github.com/user-attachments/assets/fbd7c012-9fb8-418e-be92-4c20b5f77cc3</video>
 
 ---
 
@@ -87,11 +87,11 @@ https://github.com/user-attachments/assets/fbd7c012-9fb8-418e-be92-4c20b5f77cc3
 
 This screencast shows how we can spawn a debugger on a `Context` that runs a simulated `CompiledMethod` and how that can be used to iteratively implement the in-image simulation capabilities for SistaV1 bytecodes:
 
-https://github.com/user-attachments/assets/33317250-26c2-4cde-b192-bd3937dd999e
+<video src="https://github.com/user-attachments/assets/33317250-26c2-4cde-b192-bd3937dd999e" controls alt="debugger-on-method-proxy.mp4">https://github.com/user-attachments/assets/33317250-26c2-4cde-b192-bd3937dd999e</video>
 
 This screencast shows how the the debugger idea can be extended to view simulated stack traces (this should currently be done in a read-only fashion, writing to simulated contexts will currently most likely produce errors):
 
-https://github.com/user-attachments/assets/de377b52-6006-4118-b2ba-704ef7560227
+<video src="https://github.com/user-attachments/assets/de377b52-6006-4118-b2ba-704ef7560227" controls alt="debugger-on-context-proxy.mp4">https://github.com/user-attachments/assets/de377b52-6006-4118-b2ba-704ef7560227</video>
 
 ---
 
@@ -132,7 +132,13 @@ https://github.com/user-attachments/assets/de377b52-6006-4118-b2ba-704ef7560227
 
 This screencast shows how our new bytecode assembler mode can help with experimenting with (SistaV1) bytecodes:
 
-https://github.com/user-attachments/assets/785ec314-dcbb-422a-a14a-0b96fa0fca39
+<video src="https://github.com/user-attachments/assets/785ec314-dcbb-422a-a14a-0b96fa0fca39" controls alt="assembler.mp4">https://github.com/user-attachments/assets/785ec314-dcbb-422a-a14a-0b96fa0fca39</video>
+
+---
+
+Proof that Oopsie can run the JSON Benchmark from the AWFY Benchmarks in the Simulator, triggering Scorch many times and thus producing optimized JSON parsing methods:
+
+<video src="https://github.com/user-attachments/assets/46ea39e8-d40f-49c3-a350-4035b6d4c36f" controls alt="json-benchmark.mp4">https://github.com/user-attachments/assets/46ea39e8-d40f-49c3-a350-4035b6d4c36f</video>
 
 ---
 
