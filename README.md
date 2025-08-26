@@ -99,7 +99,7 @@ If you load the [AWFY benchmark suite](https://github.com/smarr/are-we-fast-yet/
 Json new benchmark!
 ```
 
-(Notably, also this example does not yet work always, see [road ahead](#road-ahead). To make the counters trip at just the right moment and avoid running into any not-yet-implemented deopts, you can place your spurreader image/changes/sources in `/tmp/mp` (yes, this is indeed a quasi-chaotic system because Squeak's startup routines compare the segments of the cwd path)).
+(Notably, also this example does not yet work always, see [road ahead](#road-ahead). To make the counters trip at just the right moment and avoid running into any not-yet-implemented deopts, you can place your spurreader image/changes/sources in `/tmp/mp` (yes, this is indeed a quasi-chaotic system because Squeak's startup routines compare the segments of the cwd path).)
 
 ### Running Benchmarks
 
