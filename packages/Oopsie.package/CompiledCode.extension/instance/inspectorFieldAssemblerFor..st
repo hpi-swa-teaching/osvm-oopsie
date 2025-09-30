@@ -4,6 +4,7 @@ inspectorFieldAssemblerFor: anInspector
 
 	^ (anInspector newFieldForType: #all key: #assembler)
 		name: 'assembler' translated; emphasizeName;
-		valueGetter: [:obj | obj disassemble assemblerStringForEdit]; printValueAsIs;
+		valueGetter: [:obj | obj disassemble];
+		printBlock: [:assemblerMethod | assemblerMethod assemblerStringForEdit];
 		shouldStyleValue: true;
 		yourself
