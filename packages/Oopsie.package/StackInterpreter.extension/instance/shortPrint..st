@@ -41,7 +41,7 @@ shortPrint: oop
 		[^'true'].
 
 	classOop := objectMemory fetchClassOfNonImm: oop.
-	((self objCouldBeClassObj: oop)
+	((objectMemory objCouldBeClassObj: oop)
 	 and: [(objectMemory numSlotsOf: classOop) = metaclassNumSlots]) ifTrue:
 		[^'class ', (self nameOfClass: oop)].
 	name := self nameOfClass: classOop.
@@ -59,7 +59,7 @@ shortPrint: oop
 	 and: [classOop ~= objectMemory nilObject
 	 and: [((objectMemory instanceSizeOf: classOop) between: ValueIndex + 1 and: ValueIndex + 2)
 	 and: [(objectMemory addressCouldBeObj: (key := objectMemory fetchPointer: KeyIndex ofObject: oop))
-	 and: [(key = objectMemory nilObject and: [self addressCouldBeClassObj: (objectMemory fetchPointer: ValueIndex ofObject: oop)])
+	 and: [(key = objectMemory nilObject and: [objectMemory addressCouldBeClassObj: (objectMemory fetchPointer: ValueIndex ofObject: oop)])
 		or: [objectMemory isBytesNonImm: key]]]]]) ifTrue:
 		[| classLookupKey |
 		 classLookupKey := objectMemory fetchClassOfNonImm: (objectMemory splObj: SchedulerAssociation).

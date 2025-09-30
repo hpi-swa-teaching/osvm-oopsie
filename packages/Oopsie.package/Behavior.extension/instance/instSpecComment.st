@@ -1,4 +1,4 @@
-*Oopsie-upstream:Trunk - tools - inspection
+*Oopsie-upstream:Trunk - tools
 instSpecComment
 
 	^ (thisContext methodClass firstPrecodeCommentFor: #instSpec) lines

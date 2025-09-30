@@ -1,1 +1,0 @@
-I make the transcript in the SimulatorMorph much faster. I achieve this by buffering the contents put on me until the next deferred UI message and only then forward them to the underlying innerTranscript.

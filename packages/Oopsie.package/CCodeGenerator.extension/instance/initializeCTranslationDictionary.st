@@ -8,11 +8,11 @@ initializeCTranslationDictionary
 	pairs := #(
 	#&				#generateAnd:on:indent:
 	#|				#generateOr:on:indent:
-	#xor:			#generateBitXor:on:indent:
 	#abs			#generateAbs:on:indent:
 	#and:			#generateSequentialAnd:on:indent:
 	#or:			#generateSequentialOr:on:indent:
 	#not			#generateNot:on:indent:
+	#xor:			#generateBitXor:on:indent:
 
 	#+				#generatePlus:on:indent:
 	#-				#generateMinus:on:indent:
@@ -97,6 +97,7 @@ initializeCTranslationDictionary
 	#cppIf:ifFalse:										#generateInlineCppIfElse:on:indent:
 	#cCoerce:to:				#generateCCoercion:on:indent:
 	#cCoerceSimple:to:			#generateCCoercion:on:indent:
+	#assert:equals:			#generateAssertEquals:on:indent:
 	#addressOf:				#generateAddressOf:on:indent:
 	#addressOf:put:			#generateAddressOf:on:indent:
 	#asAddress:put:			#generateAsAddress:on:indent:

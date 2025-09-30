@@ -25,13 +25,13 @@ utilitiesMenu: aMenuMorph
 		add: 'print rump C stack' action: [self printRumpCStack];
 		add: 'print registers' action: [cogit processor printRegistersOn: transcript];
 		add: 'print register map' action: [cogit printRegisterMapOn: transcript];
-		add: 'disassemble method/trampoline...' action: [(self promptHex: 'pc') ifNotNil: [:pc| cogit disassembleCodeAt: pc]];
+		add: 'disassemble method/trampoline...' action: [(self promptHex: 'pc') ifNotNil: [:pc| cogit disassembler disassembleCodeAt: pc]];
 		add: 'disassemble method/trampoline at pc' action:
-			[cogit disassembleCodeAt: (((cogit codeEntryFor: cogit processor pc) isNil
+			[cogit disassembler disassembleCodeAt: (((cogit codeEntryFor: cogit processor pc) isNil
 										  and: [(cogit methodZone methodFor: cogit processor pc) isNil])
 											ifTrue: [instructionPointer]
 											ifFalse: [cogit processor pc])];
-		add: 'disassemble ext head frame method' action: [cogit disassembleMethod: (self mframeCogMethod: self headFramePointer)];
+		add: 'disassemble ext head frame method' action: [cogit disassembler disassembleMethod: (self mframeCogMethod: self headFramePointer)];
 		add: 'print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self printOop: oop]];
 		add: 'inspect oop...' action: [(self promptHex: 'inspect oop') ifNotNil: [:oop | self inspectOop: oop]];
 		add: 'long print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self longPrintOop: oop]];
@@ -69,10 +69,10 @@ utilitiesMenu: aMenuMorph
 		add: 'print cog method for...' action: [(self promptHex: 'pc' initialAnswer: (cogit processor pc printStringBase: 16)) ifNotNil:
 															[:pc| cogit printCogMethodFor: pc]];
 		add: 'print cog method header for...' action: [(self promptHex: 'pc' initialAnswer: (cogit processor pc printStringBase: 16)) ifNotNil:
-															[:pc| cogit printCogMethodHeaderFor: pc]];
+															[:pc| cogit disassembler printCogMethodHeaderFor: pc]];
 		add: 'print trampoline table' target: cogit action: #printTrampolineTable;
 		add: 'print prim trace log' action: #dumpPrimTraceLog;
-		add: 'report recent instructions' target: cogit action: #reportLastNInstructions;
+		add: 'open recent instructions report' target: cogit action: #openLastNInstructions;
 		add: (cogit printRegisters
 				ifTrue: ['no print registers each instruction']
 				ifFalse: ['print registers each instruction'])
@@ -100,7 +100,7 @@ utilitiesMenu: aMenuMorph
 		add: ((InitializationOptions at: #haltOnExecuteMethod ifAbsent: [false])
 				ifTrue: [ 'no break on execute method']
 				ifFalse: ['break on execute method'])
-			action: [InitializationOptions at: #haltOnExecuteMethod put: (InitializationOptions at: #haltOnExecuteMethod ifAbsent: [false]) not];
+			action: [InitializationOptions at: #haltOnExecuteMethod put: (InitializationOptions at: #haltOnExecuteMethod) not];
 		add: 'set break pc', cogit breakPC menuPrompt, '...-ve to disable or remove' action: [cogit promptForBreakPC];
 		add: 'set break count...' action: [|s| s := UIManager default request: 'break count (dec)'.
 											s notEmpty ifTrue: [breakCount := Integer readFrom: s readStream]];

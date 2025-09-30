@@ -1,3 +1,0 @@
-accessing
-endEntry
-	"no op"

@@ -1,3 +1,0 @@
-accessing
-innerTranscript
-	^ innerTranscript

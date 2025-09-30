@@ -2,9 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"disassembleOn:" : "mad 5/25/2025 20:05",
+		"disassembleOn:" : "ct 9/30/2025 02:28",
 		"disassembleString" : "ct 7/11/2025 21:29",
-		"inspectorClass" : "ct 5/25/2025 23:15",
+		"inspectorFieldDisassemblyFor:" : "ct 9/29/2025 23:29",
+		"inspectorFieldMethodFor:" : "ct 7/2/2025 23:37",
+		"inspectorFieldSelectorFor:" : "ct 7/2/2025 23:37",
 		"methodObjectProxy" : "mad 5/25/2025 22:09",
 		"selectorProxy" : "mad 5/25/2025 22:09",
+		"streamOopsieInspectorFieldsFor:on:" : "ct 9/29/2025 23:29",
 		"styledDisassembleText" : "ct 7/11/2025 21:30" } }

@@ -1,6 +1,6 @@
 *Oopsie-upstream:VMMaker-sista inline primitives - unary-override
 unarySizeInlinePrimitive: primIndex
-	<option: #SistaVM>
+	<essential: #SistaVM>
 	| result top |
 	self assert: (primIndex between: 1 and: 6).
 	top := self internalStackTop.

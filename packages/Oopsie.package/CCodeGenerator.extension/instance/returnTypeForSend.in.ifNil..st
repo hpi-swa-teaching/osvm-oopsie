@@ -13,7 +13,7 @@ returnTypeForSend: sendNode in: aTMethod ifNil: typeIfNil
 			[:methodOrNil|
 			^methodOrNil returnType
 				ifNil: [typeIfNil]
-				ifNotNil: [self baseTypeForType: methodOrNil returnType]]].
+				ifNotNil: [:returnType| returnType]]].
 	^kernelReturnTypes
 		at: sel
 		ifAbsent:
@@ -49,7 +49,10 @@ returnTypeForSend: sendNode in: aTMethod ifNil: typeIfNil
 												ifFalse: [self typeForArithmetic: sendNode in: aTMethod]].
 				[#bitOr:]				->	[self typeForArithmetic: sendNode in: aTMethod].
 				[#bitXor:]				->	[self typeForArithmetic: sendNode in: aTMethod].
-				[#bitClear:]			->	[self typeForArithmetic: sendNode in: aTMethod].
+				[#bitClear:]			->	[(sendNode args first isConstant and: [sendNode args first value between: 0 and: (1 bitShift: BytesPerWord * 8 - 1) - 1])
+												"prefer the type of the receiver if the constant doesn't clear the sign bit"
+												ifTrue: [self typeFor: sendNode receiver in: aTMethod]
+												ifFalse: [self typeForArithmetic: sendNode in: aTMethod]].
 				[#bitInvert32]			->	[#'unsigned int'].
 				[#bitInvert64]			->	[self promoteArithmeticTypes: (sendNode receiver typeFrom: self in: aTMethod) and: #int].
 				[#byteSwap32]		->	[#'unsigned int'].
@@ -106,6 +109,7 @@ returnTypeForSend: sendNode in: aTMethod ifNil: typeIfNil
 				[#or:]					->	[#sqInt].
 				[#xor:]					->	[#sqInt].
 				[#caseOf:]				->	[self typeFor: sendNode args first in: aTMethod].
+				[#caseOf:otherwise:]	->	[self typeFor: sendNode args first in: aTMethod].
 				[#preDecrement]		->	[self typeFor: sendNode receiver in: aTMethod].
 				[#preIncrement]		->	[self typeFor: sendNode receiver in: aTMethod] }
 				otherwise: "If there /is/ a method for sel but its return type is as yet unknown it /mustn't/ be defaulted,

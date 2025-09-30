@@ -1,3 +1,6 @@
 *Oopsie-upstream:VMMaker-disassembly
 disassembleOn: aStream
-	cogit disassembleMethod: self on: aStream.
+
+	cogit disassembler copy
+		stream: aStream;
+		disassembleMethod: self.

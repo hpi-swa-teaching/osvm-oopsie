@@ -17,12 +17,13 @@ initializationOptionNames
 				[names add: node arguments first key]]].
 	^names sorted
 						
-	"Here is a list of the keys, categorized as system configuration, launch configuration, breakpointing options, and options computed during initialization (i.e. not usefully settable by the user).
+	"Here is a list of the keys, categorized as system configuration, launch configuration, breakpointing options, Slang testing options, and options computed during initialization (i.e. not usefully settable by the user).
 	 The best documentation is the source code which can be browsed selectively by e.g.
 		self systemNavigation browseAllCallsOn: (VMClass bindingOf: #InitializationOptions) and: #bytecodeTableInitializer (your option goes here)
 	 V3 refers to the original BTTF VM's bytecode set and object representation/GC
 	 Spur refers to Eliot Miranda's lazy forwarding/class indices based object representation/GC
 	 Sista refers to Clément Béra and Eliot Miranda's bytecode set and/or system architecture for adaptive optimization
+	 lemming debugging refers to running GCs in a copy of the system before running them in the real system so that bugs in GCs can be analysed since the original heap is undisturbed if the GC in the copy crashes
 
 	System Configuration
 	#ObjectMemory					required	Symbol		(see below)					class name of object representation/GC
@@ -68,11 +69,10 @@ initializationOptionNames
 
 	Simulation Configuration
 	#ByteCountsPerMicrosecond		optional	Integer				if set, defines how fast the byteCount advances relative to the simulated microsecond clock
-	#CheckStackDepth				optional	Boolean	false	if true turns on checking of Smalltalk stack depth in various run-time routines
+	#CheckStackDepth				optional	Boolean	true	if true turns on checking of Smalltalk stack depth in various run-time routines called from machine code (send lookup routines, aborts, etc)
 	#CloneOnGC						optional	Boolean	true	if true turns on lemming debugging of global GCs
 	#CloneOnScavenge				optional	Boolean	true	if true turns on lemming debugging of scavenging GCs (Spur only)
 	#DoNotJIT							optional	Array of Integer	if set lists the selector oops, and/or primitive indices of methods not to jit
-	#EagerInstructionDecoration		optional	Boolean	false	if true turns on decoration of recorded JIT instructions if recording whilke single-stepping machine code simulation
 	#MaxFileDescriptors				optional	Integer				if set, defines how many file descriptors the FilePlugin will provide
 	#UseMultiProcessor				optional	Boolean	false	if true, use the MultiProcessor wrapper around the processor when simulating a COGMTVM
 	#isCFramePointerInUse			optional	Boolean	true	if false, does not save/restpore the frame pointer register in generated trampolines in the Cogit
@@ -98,6 +98,9 @@ initializationOptionNames
 	#debugOpcodeIndices			optional	Set of Integer		sets the abstract instruction indexes at which JIT compilation will break *in the breakMethod if set* (cf instructionIndex)
 	#instructionAddress				optional	Integer				sets the address containing an abstract instruction at which JIT compilation will break *in the breakMethod if set*
 	#instructionIndex					optional	Integer or Set there-of		sets the index(s) of abstract instruction(s) at which JIT compilation will break (cf debugOpcodeIndices)
+
+	Slang Testing:
+	Any compile-time parameter (see VMBasicConstants class>>defineAtCompileTime:) can be overridden in InitializationOptions
 
 	Computed:
 	#COGVM									Boolean	true if a CogVM

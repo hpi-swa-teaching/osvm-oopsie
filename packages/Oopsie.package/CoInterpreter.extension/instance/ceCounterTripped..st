@@ -11,7 +11,7 @@ ceCounterTripped: condition
 	 The minor case is that there is an unlikely  possibility that the counter tripped but condition
 	 is not a boolean, in which case a mustBeBoolean response should occur."
 	<api>
-	<option: #SistaCogit>
+	<essential: #SistaVM>
 	"Send e.g. thisContext conditionalBranchCounterTrippedOn: boolean."
 	| counterTrippedSelector |
 	(condition = objectMemory falseObject

@@ -1,4 +1,0 @@
-*Oopsie
-inspectorClass
-
-	^ CogMethodInspector
