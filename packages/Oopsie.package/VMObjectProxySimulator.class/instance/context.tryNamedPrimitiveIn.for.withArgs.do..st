@@ -15,4 +15,6 @@ context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: a
 	^ self context: aContext withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter |
 		interpreter argumentCount: 0.
 		address := objectMemory interpreter basicIoLoadFunction: literal second From: literal first.
-		interpreter callExternalPrimitive: address]
+		address = 0
+			ifTrue: [interpreter primitiveFailFor: (objectMemory integerObjectOf: -1)]
+			ifFalse: [interpreter callExternalPrimitive: address]]
