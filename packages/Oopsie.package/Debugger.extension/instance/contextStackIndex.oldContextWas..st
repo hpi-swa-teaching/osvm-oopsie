@@ -2,7 +2,7 @@
 contextStackIndex: anInteger oldContextWas: oldContext 
 	"Change the context stack index to anInteger, perhaps in response to user selection."
 
-	| isNewMethod newContext |
+	| isNewMethod newContext cviClass |
 	self saveReceiverInspectorState.
 	self saveContextVariablesInspectorState.
 	contextStackIndex := anInteger.
@@ -15,7 +15,9 @@ contextStackIndex: anInteger oldContextWas: oldContext
 			changeInspectorClassTo: DebuggerProcessInspector;
 			object: self interruptedProcess.
 		 self restoreContextVariablesInspectorState.
-		 receiverInspector context: nil; inspect: self receiver.
+		 receiverInspector
+			context: nil;
+			inspectObject: self receiver.
 		 self restoreReceiverInspectorState.
 		 ^self].
 	isNewMethod := oldContext isNil
@@ -28,17 +30,18 @@ contextStackIndex: anInteger oldContextWas: oldContext
 	self decorateButtons.
 	
 	newContext := self selectedContext.
-	(contextVariablesInspector isKindOf: ContextVariablesInspector) ifFalse:
+	cviClass := newContext contextVariablesInspectorClass.
+	(contextVariablesInspector isKindOf: cviClass) ifFalse:
 		[contextVariablesInspector
 			object: nil;
-			changeInspectorClassTo: ContextVariablesInspector].
+			changeInspectorClassTo: cviClass].
 	contextVariablesInspector object == newContext
 		ifFalse: [contextVariablesInspector object: newContext]
 		ifTrue: [contextVariablesInspector update]. "ct: this fixes missing context variable updates when stepping from non-top context"
 	self restoreContextVariablesInspectorState.
 	receiverInspector context: newContext.
 	receiverInspector object == self receiver
-		ifFalse: [receiverInspector inspect: self receiver]
+		ifFalse: [receiverInspector inspectCarefully: self receiver]
 		ifTrue: [receiverInspector update].
 	self restoreReceiverInspectorState.
 	

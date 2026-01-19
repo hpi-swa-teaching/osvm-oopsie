@@ -137,12 +137,14 @@ initializeCTranslationDictionary
 	#minSmallInteger			#generateSmallIntegerConstant:on:indent:
 	#maxSmallInteger			#generateSmallIntegerConstant:on:indent:
 	
-	#perform:							#generatePerform:on:indent:
-	#perform:with:						#generatePerform:on:indent:
-	#perform:with:with:				#generatePerform:on:indent:
-	#perform:with:with:with:			#generatePerform:on:indent:
-	#perform:with:with:with:with:		#generatePerform:on:indent:
-	#perform:with:with:with:with:with:	#generatePerform:on:indent:
+	#perform:									#generatePerform:on:indent:
+	#perform:with:							#generatePerform:on:indent:
+	#perform:with:with:						#generatePerform:on:indent:
+	#perform:with:with:with:					#generatePerform:on:indent:
+	#perform:with:with:with:with:			#generatePerform:on:indent:
+	#perform:with:with:with:with:with:		#generatePerform:on:indent:
+	#perform:withArguments:				#generatePerform:on:indent:
+	#perform:withArguments:inSuperclass:	#generatePerform:on:indent:
 
 	#value									#generateValue:on:indent:
 	#value:									#generateValue:on:indent:

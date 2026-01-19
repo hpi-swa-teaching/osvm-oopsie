@@ -75,11 +75,12 @@ initializationOptionNames
 	#DoNotJIT							optional	Array of Integer	if set lists the selector oops, and/or primitive indices of methods not to jit
 	#MaxFileDescriptors				optional	Integer				if set, defines how many file descriptors the FilePlugin will provide
 	#UseMultiProcessor				optional	Boolean	false	if true, use the MultiProcessor wrapper around the processor when simulating a COGMTVM
-	#isCFramePointerInUse			optional	Boolean	true	if false, does not save/restpore the frame pointer register in generated trampolines in the Cogit
 	#disableOSProcess				optional	Boolean	false	if true, tries to avoid unsimulatable code in the OSProcessPlugin to allow images using OSProcess to simulate
 	#desiredCogCodeSize				optional	Integer				if set, overrides the default cog code size (mimics command-line setting in real VM)
 	#desiredEdenBytes				optional	Integer				if set, overrides the default eden size (mimics command-line setting in real VM)
 	#desiredNumStackPages			optional	Integer				if set, overrides the default number of stack zone pages (mimics command-line setting in real VM)
+	#isCFramePointerInUse			optional	Boolean	true	if false, does not save/restpore the frame pointer register in generated trampolines in the Cogit
+	#nInstructionsLimit				optional	Integer				max number of instructions remembered when single-stepping; defaults to 320
 	#sistaSimulatedSelectorCounterTripped	optional	Symbol		If set, delegates counter trips in a Sista VM to the host image by sending the symbol to an Oopsie proxy on the oop of the counter-tripping context. The simulated VM can still control whether counter trips should be handled by setting Smalltalk specialObjectsArray at: 59 to nil.
 	#sistaSimulatedSelectorTrap			optional		Symbol		If set, delegates traps in a Sista VM to the host image by sending the symbol to an Oopsie proxy on the oop of the trapping context.
 
@@ -96,6 +97,7 @@ initializationOptionNames
 	#debugBytecodePointers			optional	Set of Integer		sets the bytecode PCs at which JIT compilation will break *in the breakMethod if set*
 	#debugFixupBreaks				optional	Set of Integer		sets the fixup instruction indexes at which JIT compilation will break *in the breakMethod if set*
 	#debugOpcodeIndices			optional	Set of Integer		sets the abstract instruction indexes at which JIT compilation will break *in the breakMethod if set* (cf instructionIndex)
+	#haltOnFailingTruncate			optional	Boolean	false	halts if the BoxedFloat64 truncate primitive fails. ASs of 12/2025 there are issues with truncate on 32-bit Spur
 	#instructionAddress				optional	Integer				sets the address containing an abstract instruction at which JIT compilation will break *in the breakMethod if set*
 	#instructionIndex					optional	Integer or Set there-of		sets the index(s) of abstract instruction(s) at which JIT compilation will break (cf debugOpcodeIndices)
 

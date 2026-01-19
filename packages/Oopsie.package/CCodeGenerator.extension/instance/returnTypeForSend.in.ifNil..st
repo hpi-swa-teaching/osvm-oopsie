@@ -46,7 +46,18 @@ returnTypeForSend: sendNode in: aTMethod ifNil: typeIfNil
 				[#bitAnd:]				->	[(sendNode args first isConstant and: [sendNode args first value between: 0 and: 16r7FFFFFFF])
 												"prefer #usqInt in the VM and #'unsigned int' in plugins"
 												ifTrue: [vmClass ifNotNil: [#usqInt] ifNil: [#'unsigned int']]
-												ifFalse: [self typeForArithmetic: sendNode in: aTMethod]].
+												ifFalse:
+													[(self typeFor: sendNode receiver in: aTMethod) ifNotNil:
+														[:rcvrType|
+														(self typeFor: sendNode args first in: aTMethod) ifNotNil:
+															[:argType|
+															^rcvrType = argType
+																ifTrue: [rcvrType]
+																ifFalse:
+																	[(self sizeOfIntegralCType: rcvrType) <= (self sizeOfIntegralCType: argType)
+																		ifTrue: [rcvrType]
+																		ifFalse: [argType]]]].
+													self typeForArithmetic: sendNode in: aTMethod]].
 				[#bitOr:]				->	[self typeForArithmetic: sendNode in: aTMethod].
 				[#bitXor:]				->	[self typeForArithmetic: sendNode in: aTMethod].
 				[#bitClear:]			->	[(sendNode args first isConstant and: [sendNode args first value between: 0 and: (1 bitShift: BytesPerWord * 8 - 1) - 1])
@@ -110,6 +121,12 @@ returnTypeForSend: sendNode in: aTMethod ifNil: typeIfNil
 				[#xor:]					->	[#sqInt].
 				[#caseOf:]				->	[self typeFor: sendNode args first in: aTMethod].
 				[#caseOf:otherwise:]	->	[self typeFor: sendNode args first in: aTMethod].
+				[#perform:]			->	[self extractReturnTypeFromFunctionPointerType:
+												(self typeFor: sendNode args first in: aTMethod)].
+				[#perform:with:]		->	[self extractReturnTypeFromFunctionPointerType:
+												(self typeFor: sendNode args first in: aTMethod)].
+				[#perform:with:with:]	->	[self extractReturnTypeFromFunctionPointerType:
+												(self typeFor: sendNode args first in: aTMethod)].
 				[#preDecrement]		->	[self typeFor: sendNode receiver in: aTMethod].
 				[#preIncrement]		->	[self typeFor: sendNode receiver in: aTMethod] }
 				otherwise: "If there /is/ a method for sel but its return type is as yet unknown it /mustn't/ be defaulted,

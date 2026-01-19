@@ -1,16 +1,20 @@
 *Oopsie-upstream:VMMaker-*VMMakerUI-user interface-override
 utilitiesMenu: aMenuMorph
+	| subMenu |
 	aMenuMorph
-		add: 'send input to stdin' action: #sendInputToStdin;
 		add: 'toggle transcript' action: #toggleTranscript;
+		add: 'send input to stdin' action: #sendInputToStdin;
 		add: 'deliver interrupt' action: #deliverInterrupt;
 		add: 'clone VM' action: #cloneSimulationWindow;
+		add: 'run leak checker' action: [Cursor execute showWhile: [self runLeakChecker]];
 		addLine;
-		add: 'print head frame' action: #printHeadFrame;
+		add: 'print stack/frame' subMenu:
+			(MenuMorph new
+				defaultTarget: self;
+				add: 'print head frame' action: #printHeadFrame;
 		add: 'short print head frame & callers' action: [self shortPrintFrameAndCallers: self headFramePointer];
 		add: 'long print head frame & callers' action: [self printFrameAndCallers: self headFramePointer SP: self headFramePointer];
 		add: 'print frame...' action: [(self promptHex: 'print frame') ifNotNil: [:fp| self printFrame: fp]];
-		add: 'inspect frame...' action: [(self promptHex: 'inspect frame') ifNotNil: [:fp| (CogFrameInspector on: self) framePointer: fp; open]];
 		add: 'print call stack' action: #printCallStack;
 		add: 'print stack call stack' action: #printStackCallStack;
 		add: 'print stack call stack of...' action: [(self promptHex: 'frame') ifNotNil: [:fp| self printStackCallStackOf: fp]];
@@ -21,57 +25,70 @@ utilitiesMenu: aMenuMorph
 											self writeBackHeadFramePointers];
 		add: 'write back mc ptrs' action: [stackPointer := cogit processor sp. framePointer := cogit processor fp. instructionPointer := cogit processor pc.
 											self externalWriteBackHeadFramePointers];
-		addLine;
-		add: 'print rump C stack' action: [self printRumpCStack];
-		add: 'print registers' action: [cogit processor printRegistersOn: transcript];
-		add: 'print register map' action: [cogit printRegisterMapOn: transcript];
-		add: 'disassemble method/trampoline...' action: [(self promptHex: 'pc') ifNotNil: [:pc| cogit disassembler disassembleCodeAt: pc]];
-		add: 'disassemble method/trampoline at pc' action:
-			[cogit disassembler disassembleCodeAt: (((cogit codeEntryFor: cogit processor pc) isNil
-										  and: [(cogit methodZone methodFor: cogit processor pc) isNil])
-											ifTrue: [instructionPointer]
-											ifFalse: [cogit processor pc])];
-		add: 'disassemble ext head frame method' action: [cogit disassembler disassembleMethod: (self mframeCogMethod: self headFramePointer)];
-		add: 'print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self printOop: oop]];
-		add: 'inspect oop...' action: [(self promptHex: 'inspect oop') ifNotNil: [:oop | self inspectOop: oop]];
-		add: 'long print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self longPrintOop: oop]];
-		add: 'print context...' action: [(self promptHex: 'print context') ifNotNil: [:oop| self printContext: oop]];
-		add: 'symbolic method...' action: [(self promptHex: 'method bytecodes') ifNotNil: [:oop| self symbolicMethod: oop]];
-		addLine;
-		add: 'inspect object memory' target: objectMemory action: #inspect;
-		add: 'run leak checker' action: [Cursor execute showWhile: [self runLeakChecker]];
-		add: 'inspect cointerpreter' action: #inspect;
-		add: 'inspect cogit' target: cogit action: #inspect;
-		add: 'inspect method zone' target: cogit methodZone action: #inspect;
-		add: 'inspect head frame' action: [CogHeadFrameInspector openFor: self];
-		add: 'inspect processor' action: [CogProcessorAlienInspector openFor: self].
+		yourself);
+	add: 'print .../disassemble' subMenu:
+			(MenuMorph new
+				defaultTarget: self;
+				add: 'print rump C stack' action: [self printRumpCStack];
+				add: 'print registers' action: [cogit processor printRegistersOn: transcript];
+				add: 'print register map' action: [cogit printRegisterMapOn: transcript];
+				add: 'disassemble method/trampoline...' action: [(self promptHex: 'pc') ifNotNil: [:pc| cogit disassembler disassembleCodeAt: pc]];
+				add: 'disassemble method/trampoline at pc' action:
+					[cogit disassembler disassembleCodeAt: (((cogit codeEntryFor: cogit processor pc) isNil
+												  and: [(cogit methodZone methodFor: cogit processor pc) isNil])
+													ifTrue: [instructionPointer]
+													ifFalse: [cogit processor pc])];
+				add: 'disassemble ext head frame method' action: [cogit disassembler disassembleMethod: (self mframeCogMethod: self headFramePointer)];
+				add: 'print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self printOop: oop]];
+				add: 'long print oop...' action: [(self promptHex: 'print oop') ifNotNil: [:oop| self longPrintOop: oop]];
+				add: 'print context...' action: [(self promptHex: 'print context') ifNotNil: [:oop| self printContext: oop]];
+				add: 'symbolic method...' action: [(self promptHex: 'method bytecodes') ifNotNil: [:oop| self symbolicMethod: oop]];
+				yourself).
+	(subMenu := MenuMorph new)
+		defaultTarget: self;
+		add: 'object memory' target: objectMemory action: #inspect;
+		add: 'oop...' action: [(self promptHex: 'inspect oop') ifNotNil: [:oop | self inspectOop: oop]];
+		add: 'cointerpreter' action: #inspect;
+		add: 'cogit' target: cogit action: #inspect.
+	cogit hasSimStack ifTrue:
+		[subMenu add: 'cogit sim stack' target: cogit action: #inspectSimStack].
+	subMenu
+		add: 'method zone' target: cogit methodZone action: #inspect;
+		add: 'head frame' action: [CogHeadFrameInspector openFor: self];
+		add: 'frame...' action: [(self promptHex: 'inspect frame') ifNotNil: [:fp| (CogFrameInspector on: self) framePointer: fp; open]];
+		add: 'processor' action: [CogProcessorAlienInspector openFor: self].
 	self isThreadedVM ifTrue:
-		[aMenuMorph add: 'inspect thread manager' target: self threadManager action: #inspect].
+		[subMenu add: 'thread manager' target: self threadManager action: #inspect].
 	aMenuMorph
+		add: 'inspect' subMenu: subMenu;
+		add: 'print cog methods' subMenu:
+			(MenuMorph new
+				defaultTarget: self;
+				add: 'all' target: cogMethodZone action: #printCogMethods;
+				add: 'with prim...' action:
+					[(self promptNum: 'prim index') ifNotNil: [:pix| cogMethodZone printCogMethodsWithPrimitive: pix]];
+				add: 'with selector...' action:
+					[|s| s := UIManager default request: 'selector'.
+					s notEmpty ifTrue:
+						[s = 'nil' ifTrue: [s := nil].
+						 cogMethodZone methodsDo:
+							[:m|
+							(s ifNil: [m selector = objectMemory nilObject]
+							 ifNotNil: [(objectMemory numBytesOf: m selector) = s size
+									and: [(self strncmp: s
+													_: (m selector + objectMemory baseHeaderSize)
+													_: (objectMemory numBytesOf: m selector)) = 0]]) ifTrue:
+								[cogit printCogMethod: m]]]];
+				add: 'with method...' action:
+					[(self promptHex: 'method') ifNotNil: [:methodOop| cogMethodZone printCogMethodsWithMethod: methodOop]];
+				add: 'for address...' action: [(self promptHex: 'pc' initialAnswer: (cogit processor pc printStringBase: 16)) ifNotNil:
+																	[:pc| cogit printCogMethodFor: pc]];
+				add: 'print cog method header for...' action: [(self promptHex: 'pc' initialAnswer: (cogit processor pc printStringBase: 16)) ifNotNil:
+																	[:pc| cogit disassembler printCogMethodHeaderFor: pc]];
+				add: 'print trampoline table' target: cogit action: #printTrampolineTable;
+				add: 'print prim trace log' action: #dumpPrimTraceLog;
+				yourself);
 		addLine;
-		add: 'print cog methods' target: cogMethodZone action: #printCogMethods;
-		add: 'print cog methods with prim...' action:
-			[(self promptNum: 'prim index') ifNotNil: [:pix| cogMethodZone printCogMethodsWithPrimitive: pix]];
-		add: 'print cog methods with selector...' action:
-			[|s| s := UIManager default request: 'selector'.
-			s notEmpty ifTrue:
-				[s = 'nil' ifTrue: [s := nil].
-				 cogMethodZone methodsDo:
-					[:m|
-					(s ifNil: [m selector = objectMemory nilObject]
-					 ifNotNil: [(objectMemory numBytesOf: m selector) = s size
-							and: [(self strncmp: s
-											_: (m selector + objectMemory baseHeaderSize)
-											_: (objectMemory numBytesOf: m selector)) = 0]]) ifTrue:
-						[cogit printCogMethod: m]]]];
-		add: 'print cog methods with method...' action:
-			[(self promptHex: 'method') ifNotNil: [:methodOop| cogMethodZone printCogMethodsWithMethod: methodOop]];
-		add: 'print cog method for...' action: [(self promptHex: 'pc' initialAnswer: (cogit processor pc printStringBase: 16)) ifNotNil:
-															[:pc| cogit printCogMethodFor: pc]];
-		add: 'print cog method header for...' action: [(self promptHex: 'pc' initialAnswer: (cogit processor pc printStringBase: 16)) ifNotNil:
-															[:pc| cogit disassembler printCogMethodHeaderFor: pc]];
-		add: 'print trampoline table' target: cogit action: #printTrampolineTable;
-		add: 'print prim trace log' action: #dumpPrimTraceLog;
 		add: 'open recent instructions report' target: cogit action: #openLastNInstructions;
 		add: (cogit printRegisters
 				ifTrue: ['no print registers each instruction']
