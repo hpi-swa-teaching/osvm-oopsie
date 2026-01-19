@@ -1,6 +1,8 @@
 *Oopsie
 vmObjectGeneratedMethod
 
+	self vmObjectMemory interpreter isCog ifFalse: [^ nil].
+	
 	self flag: #todo. "answer nil if there is no generated method"
 	self flag: #todo. "could a CompiledMethod actually have multiple cog methods?"
 	

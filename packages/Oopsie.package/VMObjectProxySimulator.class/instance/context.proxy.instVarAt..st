@@ -7,5 +7,5 @@ context: aContext proxy: anObject instVarAt: index
 	oop := anObject xxxOop.
 	interpreter push: interpreter instructionPointer.
 	^ (self proxyClass forObjectMemory: objectMemory oop:
-		([interpreter ceContext: oop instVar: index - 1]
+		([interpreter oopsie: oop instVar: index - 1]
 			ensure: [interpreter popStack]))
