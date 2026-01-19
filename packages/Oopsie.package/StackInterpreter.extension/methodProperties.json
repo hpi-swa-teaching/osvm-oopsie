@@ -4,10 +4,13 @@
 	"instance" : {
 		"branchOnBehaviorLiteral" : "mad 7/20/2025 15:42",
 		"inspectOop:" : "ct 7/16/2025 21:22",
+		"instructionPointer" : "eem 2/2/2009 11:57",
 		"oopsie:instVar:" : "ct 1/19/2026 19:29",
 		"oopsie:instVar:put:" : "ct 1/19/2026 19:30",
+		"primitiveFunctionPointer:" : "ct 1/19/2026 19:21",
 		"printOopShortInner:" : "ct 7/20/2025 19:54",
 		"proxyForOop:" : "ct 6/8/2025 19:57",
 		"shortPrint:" : "ct 9/29/2025 23:37",
+		"stackPointer" : "eem 1/8/2009 16:39",
 		"unarySizeInlinePrimitive:" : "ct 9/29/2025 23:40",
 		"wantsToUseOopsie" : "ct 7/16/2025 21:22" } }
