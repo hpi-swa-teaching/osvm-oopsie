@@ -6,9 +6,11 @@ todoMoveUpstream
 	Major concepts to move upstream:
 	- external objects
 	- symbolicTextWithSendAndBranchData/InstructionPrinterWithSendAndBranchData
-	- faster transcript (VMDeferredFlushTranscriptStream)
 	- DecoratedAssemblerStyler/YarosX86AsmStyler
 	- AssemblerBrowser (see upstream:MethodMassage and implementations of #todoMoveUpstream there)
+	
+	Concepts that already were merged:
+	- faster transcript (VMDeferredFlushTranscriptStream)
 	
 	Overview of external depencies:
 	- Required:
