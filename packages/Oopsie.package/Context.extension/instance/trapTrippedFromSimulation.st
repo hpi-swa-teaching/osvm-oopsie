@@ -2,6 +2,4 @@
 trapTrippedFromSimulation
 	"Triggered by the Sista JIT. Here you need to manage the dynamic deoptimization."
 	<noRuntimeOptimizations>
-	| deoptCtxt |
-	deoptCtxt := self deoptimize.
-	^ deoptCtxt
+	^ self deoptimize

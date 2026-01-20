@@ -3,7 +3,7 @@ fieldFormatFor: inspector
 	<inspectorField>
 
 	^ (inspector newFieldForType: #vm key: #vmCompiledCodeBody)
-		name: 'format'; emphasizeName;
+		name: 'vm format'; emphasizeName;
 		valueGetter: [:obj | obj formatComment];
 		printValueAsIs;
 		yourself

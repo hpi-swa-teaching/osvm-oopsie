@@ -1,4 +1,4 @@
-*Oopsie-upstream:Trunk-testing
+*Oopsie-testing
 isVmObjectProxyClass
 
 	^ false
