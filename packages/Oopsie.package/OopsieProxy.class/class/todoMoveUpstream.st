@@ -4,13 +4,14 @@ todoMoveUpstream
 	self todoMoveUpstream
 	
 	Major concepts to move upstream:
-	- external objects
 	- symbolicTextWithSendAndBranchData/InstructionPrinterWithSendAndBranchData
 	- DecoratedAssemblerStyler/YarosX86AsmStyler
 	- AssemblerBrowser (see upstream:MethodMassage and implementations of #todoMoveUpstream there)
 	
 	Concepts that already were merged:
+	- external objects (pending on oopsie branch)
 	- faster transcript (VMDeferredFlushTranscriptStream)
+	- send input to stdin (pending in VMMaker inbox)
 	
 	Overview of external depencies:
 	- Required:
