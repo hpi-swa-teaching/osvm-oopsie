@@ -4,11 +4,11 @@
 		 ],
 	"classvars" : [
 		"ShouldUseProxyInspectors" ],
-	"commentStamp" : "ct 7/19/2025 22:37",
+	"commentStamp" : "ct 1/21/2026 18:13",
 	"instvars" : [
 		"objectMemory",
 		"oop" ],
-	"name" : "VMObjectProxy3",
+	"name" : "OopsieProxy",
 	"pools" : [
 		 ],
 	"super" : "ProtoObject",

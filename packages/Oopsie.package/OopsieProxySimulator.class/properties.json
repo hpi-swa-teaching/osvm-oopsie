@@ -5,10 +5,10 @@
 	"classvars" : [
 		"Mirror",
 		"VMPrimitives" ],
-	"commentStamp" : "ct 7/19/2025 22:38",
+	"commentStamp" : "ct 1/21/2026 18:08",
 	"instvars" : [
 		"sandbox" ],
-	"name" : "VMObjectProxySimulator",
+	"name" : "OopsieProxySimulator",
 	"pools" : [
 		 ],
 	"super" : "Simulator",

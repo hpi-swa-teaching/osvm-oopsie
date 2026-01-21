@@ -1,4 +1,0 @@
-testing
-isVmObjectProxyClass
-
-	^ true

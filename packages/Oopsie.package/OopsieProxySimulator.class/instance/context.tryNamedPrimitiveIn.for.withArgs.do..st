@@ -6,7 +6,7 @@ context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: a
 	(literal isArray and: [literal first == #Oopsie]) ifTrue:
 		[^ self context: aContext tryOopsiePrimitiveIn: aCompiledMethod for: receiver withArgs: arguments].
 	
-	(aContext objectClass: receiver) isVmObjectProxyClass ifFalse:
+	(aContext objectClass: receiver) isOopsieProxyClass ifFalse:
 		[^ super context: aContext tryNamedPrimitiveIn: aCompiledMethod for: receiver withArgs: arguments do: aBlock].
 	
 	objectMemory := receiver xxxObjectMemory.

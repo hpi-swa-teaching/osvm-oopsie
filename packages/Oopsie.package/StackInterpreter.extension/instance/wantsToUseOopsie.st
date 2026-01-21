@@ -1,6 +1,6 @@
 *Oopsie-upstream:VMMaker-debug inspection
 wantsToUseOopsie
 
-	^ (self environment classNamed: #VMObjectProxy3)
+	^ (self environment classNamed: #OopsieProxy)
 		ifNotNil: [:class | class useProxyInspectors]
 		ifNil: [false]

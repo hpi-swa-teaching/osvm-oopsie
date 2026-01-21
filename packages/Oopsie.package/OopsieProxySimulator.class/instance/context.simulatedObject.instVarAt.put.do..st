@@ -2,7 +2,7 @@ read-only objects
 context: aContext simulatedObject: anObject instVarAt: index put: value do: aBlock
 
 	| objectMemory interpreter oop |
-	(aContext objectClass: anObject) isVmObjectProxyClass ifFalse:
+	(aContext objectClass: anObject) isOopsieProxyClass ifFalse:
 		[^ super context: aContext simulatedObject: anObject instVarAt: index put: value do: aBlock].
 	
 	objectMemory := anObject xxxObjectMemory.

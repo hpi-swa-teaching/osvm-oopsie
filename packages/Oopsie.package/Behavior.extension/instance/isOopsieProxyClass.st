@@ -1,4 +1,4 @@
 *Oopsie-testing
-isVmObjectProxyClass
+isOopsieProxyClass
 
 	^ false

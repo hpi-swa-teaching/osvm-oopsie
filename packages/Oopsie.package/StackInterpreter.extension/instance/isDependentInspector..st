@@ -7,4 +7,4 @@ isDependentInspector: aModel
 			ifFalse: [^false].
 	^object == self
 		or: [object == objectMemory]
-		or: [(thisContext objectClass: object) isVmObjectProxyClass and: [object xxxObjectMemory == objectMemory]]
+		or: [(thisContext objectClass: object) isOopsieProxyClass and: [object xxxObjectMemory == objectMemory]]

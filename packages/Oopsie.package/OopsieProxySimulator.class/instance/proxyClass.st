@@ -1,4 +1,4 @@
 private
 proxyClass
 
-	^ VMObjectProxy3
+	^ OopsieProxy

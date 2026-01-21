@@ -1,0 +1,3 @@
+I am a SimulationStudio simulator (NOT a VM simulator) that redirects all state accesses from OopsieProxy instances to the ObjectMemory/Interpreter of a simulated VM. Additionally, I offer basic introspection of oops via the Oopsie primitive module.
+
+Because I use the in-image simulator, I am slooooow (at least 3 orders of magnitudes slower than regular execution). Maybe my creators will replace me at some day with a much faster bytecode rewriting approach.

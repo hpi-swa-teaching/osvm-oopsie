@@ -13,7 +13,7 @@ context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: 
 				self flag: #todo. "support primitive189 and do not erase checks from Context. also in TDB"
 				^ aContext doPrimitive: methodArg primitive method: methodArg receiver: (arguments atLast: 3) args: (arguments atLast: 2)]].
 	
-	(aContext objectClass: receiver) isVmObjectProxyClass ifFalse:
+	(aContext objectClass: receiver) isOopsieProxyClass ifFalse:
 		[^ super context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: receiver args: arguments do: aBlock].
 	
 	primitiveIndex = 173 ifTrue: [
@@ -34,10 +34,14 @@ context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: 
 	(VMPrimitives at: primitiveIndex) ifFalse:
 		[^ super context: aContext doPrimitive: primitiveIndex method: aCompiledMethod receiver: receiver args: arguments do: aBlock].
 	
-	^ self context: aContext method: aCompiledMethod withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter | | sp fp |
+	^ self context: aContext method: aCompiledMethod withObjectMemory: objectMemory receiver: receiver arguments: arguments simulatePrimitive: [:interpreter |
+		| oldFunctionPointer sp fp |
+		oldFunctionPointer := interpreter primitiveFunctionPointer.
 		sp := interpreter stackPointer. fp := interpreter framePointer.
 		[interpreter
 			primitiveFunctionPointer: (interpreter functionPointerFor: primitiveIndex inClass: objectMemory nilObject);
 			initPrimCall;
 			dispatchFunctionPointer: interpreter primitiveFunctionPointer]
-				ensure: [primitiveIndex = 76 ifTrue: [interpreter stackPointer: sp; framePointer: fp]]]
+				ensure:
+					[interpreter primitiveFunctionPointer: oldFunctionPointer.
+					primitiveIndex = 76 ifTrue: [interpreter stackPointer: sp; framePointer: fp]]]
