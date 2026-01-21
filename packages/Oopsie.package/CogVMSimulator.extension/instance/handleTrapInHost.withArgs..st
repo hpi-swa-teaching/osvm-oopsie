@@ -1,7 +1,6 @@
 *Oopsie-scorching
 handleTrapInHost: aSymbol withArgs: aCollection
 	| context receiver |
-	self halt: aSymbol.
 	context := self proxyForOop: (self ensureFrameIsMarried: framePointer SP: stackPointer).
 	
 	"Add a fake context of some method to prevent a divorce of `context` resulting in it simply being peeled.
