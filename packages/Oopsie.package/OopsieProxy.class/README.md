@@ -4,8 +4,10 @@ I was originally designed to support bootstrapping of Scorch, an in-image adapti
 However, I am in no way restricted to CompiledMethods and Contexts, so I can also be applied to use the host image's tools such as inspectors and debuggers to access simulated objects during debugging.
 	E.g., try this in the simulator:
 		World firstSubmorph tryPrimitive: 114 withArgs: #()!
-	And then in the debugger, do this:
+	And then in the debugger, do one of this:
+		(self proxyForOop: self stackTop) extent.
 		self inspectOop: self stackTop.
+	You can also inspect proxies on oops from the simulator menu.
 
 For more information, see: https://github.com/hpi-swa-teaching/osvm-oopsie
 OOPSIE (Object-Oriented PointerS Interaction Engine) was originally developed for the OpenSmalltalk VMMaker simulator by Marius Dörbandt and Christoph Thiede and Eliot Miranda.

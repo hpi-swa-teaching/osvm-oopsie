@@ -7,7 +7,7 @@
 		"VMPrimitives" ],
 	"commentStamp" : "ct 1/21/2026 18:08",
 	"instvars" : [
-		"sandbox" ],
+		 ],
 	"name" : "OopsieProxySimulator",
 	"pools" : [
 		 ],

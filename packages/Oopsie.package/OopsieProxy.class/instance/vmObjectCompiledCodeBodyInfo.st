@@ -1,4 +1,4 @@
-tools - inspection - domains
+tools - domains
 vmObjectCompiledCodeBodyInfo
 
 	"Implemented here and not on CompiledMethod for performance reasons (>50% faster without simulation overhead)."

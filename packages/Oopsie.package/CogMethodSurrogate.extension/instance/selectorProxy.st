@@ -1,3 +1,3 @@
 *Oopsie
 selectorProxy
-	^ self proxyForOop: self selector
+	^ self interpreter proxyForOop: self selector

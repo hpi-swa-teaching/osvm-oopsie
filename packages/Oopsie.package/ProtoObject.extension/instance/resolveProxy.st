@@ -1,6 +1,6 @@
 *Oopsie-upstreamCompat:resolveProxy-proxy-override
 resolveProxy
-	"If the receiver is a proxy, resolve the receiver into the underlying object, otherwise return self.
+	"If the receiver is a proxy, resolve it into the underlying object, otherwise return self.
 	When a transparent proxy is passed to a primitive that cannot handle it, the fallback code of the primitive method should send this message and then retry the primitive with the resolved result. Occasionally, also non-primitive methods may send this message to prefetch data as an optimization (e.g., to avoid resolving proxies during every rendering cycle). However, as a general rule, proxies should be resolved as late as possible to retain a live reference to the underlying data. For additional context, read the second section of Object class howToModifyPrimitives.
 	
 	Notes for implementors:
@@ -15,6 +15,8 @@ resolveProxy
 	(Design note: In many cases, the type of the represented object would already seem obvious from the context of the failing primitive method---e.g., Object>>at: could also send a more specific #resolveIntegerProxy, sparing proxies from the need to (potentially costly) type check on their own. However, per general execution semantics any primitive method can be executed with any types of arguments (e.g., 'hi' at: 1s1), so such an optimization would not be safe.)
 	
 	[1] Yaros: https://github.com/LinqLover/yaros
-	[2] Oopsie for VMMaker (not yet released)"
+	[2] Oopsie for VMMaker: https://github.com/hpi-swa-teaching/osvm-oopsie
+
+	TODO UPSTREAM: This implementation (i.e., virtually all senders of #resolveProxy and #isProxy in this package) is a partial copy of resolveProxy.3.cs from squeak-dev (https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/thread/Z7WDON3FBX6YOKRC4SW5NGN4HQXVP73Z/). This should be moved upstream and potentially revised as discussed on the mailing list."
 
 	^ self

@@ -4,7 +4,7 @@ streamBaseFieldsOn: aStream
 	
 	aStream
 		nextPut: self fieldSelf.
-	self object class isVmObjectProxyClass ifTrue:
+	self object class isOopsieProxyClass ifTrue:
 		[self streamVmObjectProxyFieldsOn: aStream].
 	aStream
 		nextPut: self fieldSource;

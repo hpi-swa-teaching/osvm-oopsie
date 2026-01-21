@@ -1,4 +1,4 @@
 *Oopsie-proxies
-resolveVmObjectProxy: proxy
+resolveOopsieProxy: proxy
 
 	^ self decompressFromByteArray: proxy compressToByteArray

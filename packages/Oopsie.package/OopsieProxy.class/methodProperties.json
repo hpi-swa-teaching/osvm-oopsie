@@ -2,7 +2,6 @@
 	"class" : {
 		"forObjectMemory:oop:" : "ct 7/24/2025 00:01",
 		"isOopsieProxyClass" : "ct 1/21/2026 18:15",
-		"isUniClass" : "ct 5/14/2025 15:24",
 		"newForObjectMemory:oop:" : "ct 6/8/2025 19:56",
 		"newInstanceFrom:variable:size:map:" : "ct 5/15/2025 00:14",
 		"todo" : "ct 1/20/2026 00:11",
@@ -22,8 +21,9 @@
 		"oopsieUnsimulatedPerform:withArgs:" : "ct 7/17/2025 02:27",
 		"printOn:" : "mad 8/9/2025 18:37",
 		"printString" : "ct 5/15/2025 17:38",
-		"resolveProxy" : "ct 6/8/2025 03:21",
+		"resolveProxy" : "ct 1/21/2026 18:54",
 		"respondsTo:" : "ct 5/15/2025 18:34",
+		"streamAllInspectorFieldsFor:on:" : "ct 1/21/2026 19:25",
 		"vmClassObject" : "ct 7/17/2025 02:02",
 		"vmObjectClass" : "ct 7/17/2025 02:07",
 		"vmObjectClassFor:" : "ct 7/17/2025 01:58",

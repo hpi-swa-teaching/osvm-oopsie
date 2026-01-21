@@ -1,4 +1,4 @@
 proxy
 resolveProxy
 
-	^ self vmObjectClass resolveVmObjectProxy: self
+	^ self vmObjectClass resolveOopsieProxy: self

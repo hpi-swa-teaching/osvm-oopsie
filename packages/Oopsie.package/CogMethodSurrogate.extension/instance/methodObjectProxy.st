@@ -1,3 +1,3 @@
 *Oopsie
 methodObjectProxy
-	^ self proxyForOop: self methodObject
+	^ self interpreter proxyForOop: self methodObject

@@ -1,4 +1,4 @@
-tools - inspection
+tools
 defaultLabelForInspector
 
 	^ self printString

@@ -1,4 +1,4 @@
-tools - inspection - domains
+tools - domains
 vmObjectStringBytesInfo
 	"just posin'"
 

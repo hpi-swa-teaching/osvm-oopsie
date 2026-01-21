@@ -5,7 +5,8 @@ visualizeFirstObjects: n
 		self systemNavigation tryPrimitive: 114 withArgs: #()!
 	Then:
 		Random seed: 123.
-		aSystemNavigationProxy visualizeFirstObjects: 10000
+		aSystemNavigationProxy := self proxyForOop: self stackTop.
+		aSystemNavigationProxy visualizeFirstObjects: 10000.
 	"
 
 	| sample colorTable colors container |

@@ -1,4 +1,4 @@
 *Oopsie-proxies
-resolveVmObjectProxy: proxy
+resolveOopsieProxy: proxy
 
 	^ proxy vmObjectMemory integerValueOf: proxy vmOop

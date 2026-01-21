@@ -4,7 +4,7 @@
 		 ],
 	"classvars" : [
 		"ShouldUseProxyInspectors" ],
-	"commentStamp" : "ct 1/21/2026 18:13",
+	"commentStamp" : "ct 1/21/2026 19:27",
 	"instvars" : [
 		"objectMemory",
 		"oop" ],
